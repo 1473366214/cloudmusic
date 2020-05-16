@@ -1,0 +1,20 @@
+#foot_div{
+    background-color: #2a2730;
+    margin-top: 40px;
+}
+#foot_cnts{
+    color: #99979c;
+    text-align: center;
+    width: 500px;
+    height: 50px;
+    display: block;
+    margin: 0 auto;
+    padding-top: 40px;
+}
+#foot_cnts div{
+    width: 400px;
+    height: 20px;
+    display: block;
+    margin: 0 auto;
+    font-size: 12px;
+}

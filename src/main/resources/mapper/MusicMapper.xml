@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.music.cloundmusic.dao.MusicMapper">
+
+    <insert id="addMusic" parameterType="Music">
+        insert into music (cover, name, singerid, albumid, collecttime, path, style)
+        values (cover=#{cover},name=#{name},singerid=#{singerid},albumid=#{albumid},collecttime=#{collecttime},path=#{path},style=#{style})
+    </insert>
+
+    <select id="getAllMusic" parameterType="string" resultType="Music">
+        select musicid,cover,name from music
+        <if test="location!=null or category!=null"> where </if>
+        <if test="location!=null">location=#{location}</if>
+        <if test="location!=null and category!=null"> and </if>
+        <if test="category!=null">category=#{category}</if>
+    </select>
+
+    <select id="getMusicInSongList" parameterType="int" resultType="Music">
+        select music.* from musicinsonglist join music on
+                musicinsonglist.musicid=music.musicid and musicinsonglist.songlistid=#{songListId}
+    </select>
+
+    <select id="getHotMusic" resultType="Music">
+        select musicid,cover,name,singerid,albumid,path,style from music order by playtimes desc limit 10
+    </select>
+
+    <select id="getMusicById" parameterType="int" resultType="Music">
+        select cover,name,singerid,albumid,path,style from music where musicid=#{musicId}
+    </select>
+
+    <select id="getMusicBySingerId" parameterType="int" resultType="Music">
+        select music.musicid,music.name,album.name as albumname from music join album on music.singerid=#{singerId} and music.albumid=album.albumid order by album.albumid
+    </select>
+
+    <select id="getMusicByAlbumId" parameterType="int" resultType="Music">
+        select musicid, name from music where albumid=#{albumId}
+    </select>
+</mapper>

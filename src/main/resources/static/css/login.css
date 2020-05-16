@@ -1,0 +1,77 @@
+#login_regist_box{
+    width: 600px;
+    height: 400px;
+    display: block;
+    margin: 0 auto;
+    background-color: #fff;
+    margin-top: 20px;
+    border: #04a219 solid 1px;
+}
+#login_regist_box #login_regist_guide{
+    width: 600px;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+#login_regist_box #login_regist_guide div{
+    width: 300px;
+    text-align: center;
+    line-height: 50px;
+    font-weight: 600;
+}
+#login_regist_box #login_regist_guide div:hover{
+    cursor: pointer;
+    border-bottom: #04a219 solid 3px;
+}
+.btn_selected{
+    border-bottom: #04a219 solid 3px;
+}
+#login_regist_box .login_ctns_box{
+    width: 600px;
+    height: 350px;
+    display: none;
+    position: relative;
+}
+#login_regist_box .login_ctns_box form{
+    position: absolute;
+    left: 25%;
+    top: 25%;
+    width: 300px;
+    height: 175px;
+}
+#login_regist_box .login_ctns_box form div{
+    width: 300px;
+    height: 30px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+#login_regist_box .login_ctns_box form div span{
+    width: 80px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 14px;
+    margin-left: 25px;
+}
+#login_regist_box .login_ctns_box form div input{
+    float: right;
+    font-size: 14px;
+    height: 25px;
+    width: 200px;
+}
+#login_regist_box .login_ctns_box form div .btn{
+    width: 120px;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+    border-radius: 18px;
+    background-color: #42c02e;
+    color: #fff;
+    position: absolute;
+    left: 70px;
+    bottom: 5px;
+}
+#login_regist_box .login_ctns_box form div .btn:hover{
+    background-color: #42a219;
+    cursor: pointer;
+}

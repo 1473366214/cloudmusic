@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.music.cloundmusic.dao.SingerMapper">
+    <select id="getSingerInfo" parameterType="int" resultType="Singer">
+        select singerid,name,cover,introduction,masterpiece from singer where singerid=#{singerId}
+    </select>
+
+    <select id="getSingerPage" resultType="Singer" parameterType="string">
+        select singerid,name,cover from singer <if test="alphabet!=null"> where alphabet=#{alphabet}</if> order by singerid
+    </select>
+</mapper>

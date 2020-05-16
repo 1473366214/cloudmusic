@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.music.cloundmusic.dao.UserMapper">
+
+    <select id="getUser" parameterType="string" resultType="User">
+        select userid,name,cover,introduction,age,sex,address,registtime from user where accounts=#{accounts} and password=#{password} limit 1
+    </select>
+
+    <select id="userExist" parameterType="string" resultType="int">
+        select count(accounts) from user where accounts=#{accounts}
+    </select>
+    
+    <insert id="setUser" parameterType="User">
+        insert into user (accounts, password, name, cover, registtime) values (#{accounts},#{password},#{name},#{cover},#{registtime})
+    </insert>
+    
+    <update id="updateMsg" parameterType="User">
+        update user set userid=#{userid}
+        <if test="name!=null">,name=#{name}</if>
+        <if test="cover!=null">,cover=#{cover}</if>
+        <if test="introduction!=null">,introduction=#{introduction}</if>
+        <if test="age!=null">,age=#{age}</if>
+        <if test="sex!=null">,sex=#{sex}</if>
+        <if test="address!=null">,address=#{address}</if>
+        where userid=#{userid}
+    </update>
+
+    <update id="updateUserPassword" parameterType="string">
+        update user set password=#{newPassword} where accounts=#{accounts} and password=#{oldPassword}
+    </update>
+
+</mapper>

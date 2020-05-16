@@ -1,0 +1,153 @@
+#index_body{
+    background-color: rgb(230, 221, 238);
+}
+        /* 
+        公告栏 
+        */
+#index_index{
+    width: 1000px;
+    background-color: #fff;
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+#index_index #index_cns1{
+    width: 1000px;
+    height: 350px;
+}
+#index_index #index_cns1 #index_cns1_left{
+    width: 200px;
+    height: 280px;
+    float: left;
+    margin-top: 35px;
+    margin-left: 50px;
+    box-sizing: border-box;
+    border-style:solid none solid solid;
+    border-width: 2px 0 1px 1px;
+    border-top-color: blue;
+    border-left-color: rgb(230, 221, 238);
+    border-bottom-color: rgb(230, 221, 238);
+}
+#index_index #index_cns1 #index_cns1_right{
+    width: 700px;
+    height: 280px;
+    float: left;
+    margin-top: 35px;
+    position: relative;
+}
+#index_index #index_cns1 #index_cns1_right .lunbotu li{
+    list-style: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.lunbotu li a img{
+    width: 700px;
+    height: 280px;
+}
+#index_index #index_cns1 #index_cns1_right .lunbo_page{
+    position: absolute;
+    right: 5px;
+    bottom: 2px;
+    font-size: 8px;
+    width: 30px;
+    height: 10px;
+}
+#index_index #index_cns1 #index_cns1_right .lunbo_page li{
+    list-style-type: none;
+    width: 10px;
+    height: 10px;
+    float: left;
+    border-radius: 5px;
+    border: black solid 1px;
+    text-align: center;
+    line-height: 10px;
+    font-weight: 100;
+}
+.current{
+    color: #fff;
+    background-color: black;
+    cursor: pointer;
+}
+#index_index #index_cns1 #index_cns1_left #gonggaobiaoti {
+    width: 100%;
+    height: 35px;
+    color: saddlebrown;
+    line-height: 35px;
+    text-align: center;
+    box-sizing: border-box;
+    border-bottom: rgb(230, 221, 238) solid 1px;
+}
+#index_index #index_cns1 #index_cns1_left .gonggao{
+    width: 100%;
+    height: 30px;
+    color: #5b5b5b;
+    font-size: 14px;
+    line-height: 30px;
+    text-align: center;
+    box-sizing: border-box;
+    border-bottom: rgb(230, 221, 238) solid 1px;
+}
+#index_index #index_cns1 #index_cns1_left .gonggao:hover{
+    cursor: pointer;
+    color: #04a219;
+}
+        /* 
+        音乐栏 
+        */
+.index_block{
+    margin-top: 10px;
+    width: 1000px;
+    height: 450px;
+    background-color: #fff;
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding-top: 40px;
+    overflow: hidden;
+}
+.index_block .index_block_title{
+    background-color: #04a219;
+    width: 150px;
+    height: 30px;
+    color: #fff;
+    line-height: 30px;
+    text-align: center;
+    font-weight: 700;
+    margin-left: 30px;
+}
+.index_block .index_block_cns{
+    width: 900px;
+    height: 400px;
+    margin-left: 30px;
+    padding-left: 30px;
+    border: rgb(230, 221, 238) solid 1px;
+    border-top: #04a219 solid 2px;
+}
+.index_block .index_block_cns .index_item{
+    width: 150px;
+    height: 170px;
+    display: block;
+    float: left;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+.index_block .index_block_cns .index_item img:hover{
+    box-sizing: border-box;
+    border: #04a219 solid 2px;
+    cursor: pointer;
+}
+.index_block .index_block_cns .index_item img{
+    max-width: 148px;
+    max-height: 148px;
+}
+.index_block .index_block_cns .index_item div{
+    width: 150px;
+    height: 15px;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 10px;
+    line-height: 15px;
+    color: #5b5b5b;
+}

@@ -1,0 +1,86 @@
+.index_block{
+    width: 1000px;
+    background-color: #fff;
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding-top: 40px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+#recommendAlbumBox{
+    height: 450px;
+}
+#allAlbumBox{
+    height: 500px;
+}
+.index_block .index_block_title{
+    background-color: #04a219;
+    width: 150px;
+    height: 30px;
+    color: #fff;
+    line-height: 30px;
+    text-align: center;
+    font-weight: 700;
+    margin-left: 30px;
+}
+.index_block .index_block_cns{
+    width: 900px;
+    height: 400px;
+    margin-left: 30px;
+    padding-left: 30px;
+    border: rgb(230, 221, 238) solid 1px;
+    border-top: #04a219 solid 2px;
+    position: relative;
+}
+.index_block .index_block_cns .index_item{
+    width: 150px;
+    height: 170px;
+    display: block;
+    float: left;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+.index_block .index_block_cns .index_item img:hover{
+    box-sizing: border-box;
+    border: #04a219 solid 2px;
+    cursor: pointer;
+}
+.index_block .index_block_cns .index_item img{
+    max-width: 148px;
+    max-height: 148px;
+}
+.index_block .index_block_cns .index_item div{
+    width: 150px;
+    height: 15px;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 10px;
+    line-height: 15px;
+    color: #5b5b5b;
+}
+
+#album_block_page{
+    width: 120px;
+    height: 30px;
+    position: absolute;
+    right: 0;
+    bottom: -40px;
+}
+#album_block_page div{
+    height: 25px;
+    width: 50px;
+    font-size: 6px;
+    float: left;
+    text-align: center;
+    line-height: 25px;
+    margin-left: 5px;
+    border: rgb(230, 221, 238) solid 1px;
+    border-radius: 5px;
+}
+#album_block_page div:hover{
+    background-color: #04a219;
+    color: #fff;
+    cursor: pointer;
+}

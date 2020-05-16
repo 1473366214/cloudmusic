@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>音乐网站</title>
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    <link rel="stylesheet" type="text/css" href="/css/foot.css">
+</head>
+<body>
+    <div id="head">
+        <div id="head-left">收藏我们</div>
+        <div id="head-right">
+            <div id="noLoginBox" class="loginBox">
+                <div id="login-btn" class="login_regist" onclick="loginBtn()">登录</div>
+                <div id="regist-btn" class="login_regist" onclick="loginBtn()">注册</div>
+            </div>
+            <div id="isLoginBox" class="loginBox">
+                <div id="logout-btn" class="login_regist" onclick="logout()">退出</div>
+                <div id="userName" ></div>
+            </div>
+        </div>
+    </div>
+    <div id="head2">
+        <div id="head2-contain">
+            <div id="head2-contain-left">音乐共享网站</div>
+            <div id="head2-contain-right">
+                <input type="text" id="head2-contain-right-text" placeholder="醉清风">
+                <div id="head2-btn">搜索</div>
+            </div>
+        </div>
+    </div>
+    <div id="guider1">
+        <div class="guider2">
+            <div class="guide" id="indexGd" onclick="indexGdClick()">首页</div>
+            <div class="guide" id="musicGd" onclick="musicGdClick()">在线音乐</div>
+            <div class="guide" id="singerGd" onclick="singerGdClick()">歌手</div>
+            <div class="guide" id="issueGd" onclick="issueGdClick()">音乐专辑</div>
+            <div class="guide" id="homeGd" onclick="homeGdClick()">在线空间</div>
+        </div>
+    </div>
+
+    <iframe name="my-iframe" id="my-iframe" th:src="${indexPath}" frameborder="0" scrolling="no" width="100%" height="1900px"></iframe>
+
+
+    
+    
+    <div id="foot_div">
+        <div id="foot_cnts"><div>CopyRight: 1473366214@qq.com</div></div>
+    </div>
+</body>
+
+<script src="/js/jquery-3.4.1.js"></script>
+<script src="/js/public.js"></script>
+<script src="/js/index2.js"></script>
+<script th:inline="javascript">
+    let myPath = [[${indexPath}]];
+</script>
+<script>
+    let toGetUserMessage=true;
+    switch (myPath) {
+        case "/index_index":gdClick("#indexGd");
+            frame.height("1900px");break;
+        case "/index_music":gdClick("#musicGd");
+            frame.height("600px");break;
+        case "/index_singer":gdClick("#singerGd");
+            frame.height("650px");break;
+        case "/index_album":gdClick("#issueGd");
+            frame.height("1100px");break;
+        case "/index_home":gdClick("#homeGd");
+            frame.height("550px");break;
+        case "/login": frame.height("450px");
+            $(".loginBox").hide();
+            toGetUserMessage=false;break;
+    }
+    if(toGetUserMessage)
+        getUserMsg(true);
+</script>
+</html>

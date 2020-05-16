@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="zh">
+<head>
+    <title>音乐网站</title>
+    <link rel="stylesheet" type="text/css" href="/css/index_music.css">
+    <link rel="stylesheet" type="text/css" href="/css/index_index.css">
+</head>
+<body id="index_body">
+    <div id="index_cnts_music_cnts" class="index_cnts">
+        <div id="index_cnts_typeCnts">
+            <div class="index_cnts_item" id="fenlei">
+                <div>分类:</div>
+                <ul id="fenleiUL">
+                    <li  class="musicLi ca" id="ca_all">全部</li>
+                    <li class="musicLi ca" th:each="category : ${categoryList}" th:text="${category}" th:attr="id='ca_'+${category}"></li>
+                </ul>
+            </div>
+            <div class="index_cnts_item" id="diqu">
+                <div>地区:</div>
+                <ul id="diquUL">
+                    <li  class="musicLi lo" id="lo_all">全部</li>
+                    <li  class="musicLi lo" th:each="location : ${locationList}" th:text="${location}" th:attr="id='lo_'+${location}"></li>
+                </ul>
+            </div>
+        </div>
+        <div class="music_block">
+            <div class="music_block_cns">
+                <div id="musicListBlock"></div>
+                <div id="music_block_page">
+                    <div class="music_block_page_btn" id="lastPage">上一页</div>
+                    <div class="music_block_page_btn" id="nextPage">下一页</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="/js/jquery-3.4.1.js"></script>
+<script src="/js/index_music.js"></script>
+</html>
+
+

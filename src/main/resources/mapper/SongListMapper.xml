@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.music.cloundmusic.dao.SongListMapper">
+    <select id="getSongList" parameterType="int" resultType="SongList">
+        select usersonglist.songlistid,usersonglist.type,songlist.creatorid,songlist.`name`,songlist.cover,songlist.introduction,songlist.style,songlist.createtime,songlist.collectiontimes
+        from usersonglist JOIN songlist ON songlist.songlistid=usersonglist.songlistid and usersonglist.userid=#{userid};
+    </select>
+    <insert id="setSongList" parameterType="SongList" useGeneratedKeys="true" keyProperty="songlistid">
+        insert into songlist (creatorid, name, cover, createtime) values (#{creatorid},#{name},#{cover},#{createtime})
+    </insert>
+    <update id="updateSongList" parameterType="SongList">
+        update songlist set songlistid=#{songlistid}
+        <if test="name!=null">,name=#{name}</if>
+        <if test="cover!=null">,cover=#{cover}</if>
+        <if test="introduction!=null">,introduction=#{introduction}</if>
+        <if test="style!=null">,cover=#{style}</if>
+        where songlistid=#{songlistid}
+    </update>
+    <delete id="deleteSongList" parameterType="int">
+        delete from songlist where songlistid=#{songlistid}
+    </delete>
+</mapper>

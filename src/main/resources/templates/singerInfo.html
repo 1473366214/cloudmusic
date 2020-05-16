@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>音乐网站</title>
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    <link rel="stylesheet" type="text/css" href="/css/foot.css">
+    <link rel="stylesheet" type="text/css" href="/css/singerInfo.css">
+    <link rel="stylesheet" type="text/css" href="/css/css/font-awesome.css">
+</head>
+<body>
+    <div id="head">
+        <div id="head-left">收藏我们</div>
+        <div id="head-right">
+            <div id="login-btn" class="login_regist" onclick="loginBtn()">登录</div>
+            <div id="regist-btn" class="login_regist" onclick="loginBtn()">注册</div>
+        </div>
+    </div>
+    <div id="head2">
+        <div id="head2-contain">
+            <div id="head2-contain-left">音乐共享网站</div>
+            <div id="head2-contain-right">
+                <input type="text" id="head2-contain-right-text" placeholder="醉清风">
+                <div id="head2-btn">搜索</div>
+            </div>
+        </div>
+    </div>
+    <div id="guider1">
+        <div class="guider2">
+            <div class="guide" id="indexGd" onclick="indexGdClick()">首页</div>
+            <div class="guide"id="musicGd" onclick="musicGdClick()">在线音乐</div>
+            <div class="guide"id="singerGd" onclick="singerGdClick()">歌手</div>
+            <div class="guide"id="issueGd" onclick="issueGdClick()">音乐专辑</div>
+            <div class="guide"id="homeGd" onclick="homeGdClick()">在线空间</div>
+        </div>
+    </div>
+    <div id="singerInfoBox">
+        <div id="infoBoxLeft"><img th:src="${singerInfo.getCover()}" alt=""></div>
+        <div id="infoBoxRight">
+            <div id="singerName" th:text="${singerInfo.getName()}"></div>
+            <div>代表作：<span id="masterpiece" th:text="${singerInfo.getMasterpiece()}"></span></div>
+            <div>介绍： <span id="introduction" th:text="${singerInfo.getIntroduction()}"></span></div>
+        </div>
+    </div>
+    <div id="musicListBox">
+        <div id="musicListTitle">歌曲列表</div>
+        <div id="musicList">
+            <ul id="listUl">
+                <li>
+                    <div class="listTitle">歌曲</div>
+                    <div class="listTitle">专辑</div>
+                    <div class="listTitle">播放</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    <div id="foot_div">
+        <div id="foot_cnts"><div>CopyRight: 1473366214@qq.com</div></div>
+    </div>
+</body>
+
+<script src="/js/jquery-3.4.1.js"></script>
+<script src="/js/index2.js"></script>
+<script src="/js/singerInfo.js"></script>
+
+<script th:inline="javascript">
+    let singerInfo=[[${singerInfo}]]
+    getMusicBySingerId(singerInfo.singerid);
+</script>
+
+</html>

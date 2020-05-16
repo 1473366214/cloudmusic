@@ -1,0 +1,111 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#albumInfoBox{
+    width: 1000px;
+    height: 340px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+}
+#infoBoxLeft{
+    width: 300px;
+    height: 300px;
+    float: left;
+    margin: 20px 0 0 20px;
+}
+#infoBoxLeft img{
+    width: 100%;
+}
+#infoBoxRight{
+    width: 600px;
+    height: 300px;
+    float: left;
+    margin: 20px 0 0 20px;
+}
+#infoBoxRight{
+    padding-left: 30px;
+}
+#albumName{
+    width: 600px;
+    height: 50px;
+    font-size: 28px;
+    font-weight: 900;
+    line-height: 50px;
+}
+#infoBoxRight div:nth-child(2){
+    height: 40px;
+    line-height: 40px;
+    border-bottom: #000 dashed 1px;
+}
+#infoBoxRight div:nth-child(3){
+    height: 40px;
+    line-height: 40px;
+    border-bottom: #000 dashed 1px;
+}
+#infoBoxRight div:nth-child(4){
+    margin-top: 20px;
+    height: 180px;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+
+#musicListBox{
+    width: 1000px;
+    height: 400px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+}
+#musicListTitle{
+    height: 40px;
+    font-size: 18px;
+    padding-left: 20px;
+    text-align: center;
+}
+#musicList{
+    width: 767px;
+    height: 340px;
+    display: block;
+    margin: 0 auto;
+    border: dimgray solid 1px;
+
+}
+#musicList ul{
+    height: 340px;
+    white-space: nowrap;
+    overflow-x: scroll;
+}
+#musicList ul li{
+    list-style-type: none;
+}
+#musicList ul li .listTitle{
+    font-size: 18px;
+    width: 375px;
+    height: 30px;
+    border-bottom: dimgray solid 1px;
+    background-color: rgb(196, 196, 255);
+    float: left;
+    text-align: center;
+    line-height: 30px;
+}
+#musicList ul li .listInfo{
+    width: 375px;
+    height: 30px;
+    border-bottom: dimgray dotted 1px;
+    float: left;
+    text-align: center;
+    line-height: 30px;
+}
+.icons{
+    margin-top: 2px;
+    cursor: pointer;
+    color: rgb(177, 15, 15);
+}

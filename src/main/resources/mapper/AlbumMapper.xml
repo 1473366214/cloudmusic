@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.music.cloundmusic.dao.AlbumMapper">
+    <resultMap id="albumMap" type="Album">
+        <id column="albumid" property="albumid"/>
+        <result column="name" property="name"/>
+        <result column="introduction" property="introduction"/>
+        <result column="cover" property="cover"/>
+        <result column="releasetime" property="releasetime"/>
+        <association property="singer" javaType="Singer">
+            <id column="sid" property="singerid"/>
+            <result column="sname" property="name"/>
+        </association>
+    </resultMap>
+
+    <select id="getRecommendAlbum" resultType="Album">
+        select albumid,name,cover from album where recommend='y' limit 10
+    </select>
+
+    <select id="getAllAlbum" resultType="Album">
+        select albumid,name,cover from album
+    </select>
+
+    <select id="getAlbumById" resultMap="albumMap" parameterType="int">
+        select album.albumid,album.name,album.cover,album.introduction,album.releasetime,singer.singerid sid,singer.name sname
+        from album join singer on album.singerid = singer.singerid and album.albumid=#{albumId}
+    </select>
+</mapper>

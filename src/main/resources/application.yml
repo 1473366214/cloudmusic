@@ -1,0 +1,24 @@
+#自定义数据
+user-cover-path: musicCover/
+#默认用户头像
+default-user-cover: /userCover/user.jpg
+#默认歌曲封面
+default-music-over: /musicCover/music.jpg
+
+default-username: 小风
+#静态文件访问绝对路径
+staticFilePath: file:F:/projectFile/
+#相对路径
+relativePath: /staticFile/
+#上传路径
+absolutePath: F:\\projectFile\\
+
+user-interceptor:
+  userPage:
+    - /user/updateUserMsg.do
+    - /user/updateUserPassword.do
+    - /user/userLogout.do
+    - /user/getUserMsg.do
+    - /message
+    - /songList/**
+    - /addLikes

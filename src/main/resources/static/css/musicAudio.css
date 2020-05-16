@@ -1,0 +1,204 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+#box{
+	width: 1100px;
+	height: 560px;
+	background-color: #fff;
+	display: block;
+	margin: 0 auto;
+	margin-top: 20px;
+	position: relative;
+	border-radius: 10px;
+}
+.musicPlayBox{
+	width: 1000px;
+	height: 520px;
+	position: relative;
+	left: 50px;
+	top: 20px;
+	border: rgb(230, 221, 238) solid 1px;
+	border-radius: 20px;
+	overflow: hidden;
+}
+#playBox1{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 700px;
+	height: 400px;
+	overflow: hidden;
+}
+#playBox1 img{
+	width: 700px;
+	height: 700px;
+}
+#playBox2{
+	position: absolute;
+	width: 300px;
+	height: 520px;
+	right: 0;
+	top: 0;
+	box-sizing: border-box;
+	border-left: rgb(230, 221, 238) solid 1px;
+}
+#geci{
+	width: 299px;
+	height: 30px;
+	background-color: rgb(77, 185, 77);
+	text-align: center;
+	line-height: 30px;
+}
+#playBox3{
+	position: absolute;
+	width: 700px;
+	height: 120px;
+	left: 0;
+	bottom: 0;
+	border-top: rgb(230, 221, 238) solid 1px;
+}
+
+/* 评论 */
+#commentBox{
+	width: 1100px;
+	height: auto;
+	background-color: #fff;
+	display: block;
+	margin: 0 auto;
+	margin-top: 20px;
+	border-radius: 10px;
+	overflow: hidden;
+}
+#myCommentBox{
+	position: relative;
+	width: 1100px;
+	height: 220px;
+}
+#title{
+	width: 900px;
+	height: 40px;
+	position: absolute;
+	left: 100px;
+	top: 20px;
+	font-size: 20px;
+	border-bottom: #c20c0c solid 2px;
+	line-height: 40px;
+}
+#myCommentText{
+	position: absolute;
+	top: 90px;
+	right: 150px;
+	font-size: 14px;
+	outline: none;
+	border-radius: 5px;
+	padding: 5px;
+}
+#myCommentCover{
+	width: 60px;
+	height: 60px;
+	position: absolute;
+	top: 95px;
+	left: 150px;
+}
+#commentLength{
+	width: 55px;
+	height: 30px;
+	position: absolute;
+	top: 175px;
+	right: 225px;
+	text-align: center;
+	line-height: 30px;
+	color: rgb(114, 114, 114);
+}
+#commentBtn{
+	width: 55px;
+	height: 30px;
+	background-color: rgb(79, 79, 252);
+	position: absolute;
+	top: 175px;
+	right: 160px;
+	text-align: center;
+	line-height: 30px;
+	color: #fff;
+	border-radius: 3px;
+	cursor: pointer;
+}
+#commentBtn:hover{
+	background-color: rgb(121, 121, 252);
+}
+.commentTitle{
+	margin-left: 100px;
+	width: 100px;
+	height: 30px;
+	font-size: 16px;
+}
+
+/* 评论列表 */
+.commentList{
+	width: 900px;
+	height: auto;
+	display: block;
+	margin: 0 auto;
+	margin-bottom: 20px;
+}
+.commentItem{
+	width: 900px;
+	height: 110px;
+	border-top: #ccc solid 1px;
+	padding: 15px 0;
+	position: relative;
+}
+.commentItem .itemLeft{
+	width: 60px;
+	height: 100px;
+	position: absolute;
+	left: 50px;
+}
+.commentItem .itemLeft img{
+	width: 60px;
+}
+.commentItem .itemRight{
+	width: 730px;
+	height: 100px;
+	position: absolute;
+	left: 120px;
+}
+.commentItem .itemRightTop{
+	width: 100%;
+	height: 75px;
+}
+.commentItem .itemRightTop span a{
+	color: blue;
+	text-decoration: none;
+}
+.commentItem .itemRightTop span a:hover{
+	text-decoration: underline;
+}
+
+.commentItem .itemRightBottom .commentTime{
+	float: left;
+	color: rgb(114, 114, 114);
+}
+.commentItem .itemRightBottom .commentGrate{
+	float: right;
+}
+.commentItem .itemRightBottom .commentGrate span{
+	float: right;
+	margin-right: 10px;
+	font-size: 14px;
+	color: rgb(114, 114, 114);
+}
+.commentItem .itemRightBottom .commentGrate div{
+	float: right;
+	background-color: rgb(79, 79, 255);
+	color: #fff;
+	width: 40px;
+	text-align: center;
+	font-size: 14px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+.commentItem .itemRightBottom .commentGrate div:hover{
+	background-color: rgb(101, 101, 255);
+}

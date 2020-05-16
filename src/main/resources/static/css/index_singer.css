@@ -1,0 +1,106 @@
+/* 字母 */
+#alphabetList{
+    width: 1000px;
+    height: 110px;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    padding-left: 30px;
+}
+.alphabet{
+    float: left;
+    width: 58px;
+    height: 30px;
+    margin-left: 5px;
+    margin-top: 18px;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #37da8b;
+}
+.alphabet:hover{
+    background-color: #259760;
+}
+.alphabetSelect{
+    background-color: #259760;
+}
+/* 方框 */
+#index_musicBlock{
+    width: 1000px;
+    height: 650px;
+    background-color: #fff;
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding-top: 10px;
+    overflow: hidden;
+    position: relative;
+}
+#index_musicBlock .index_block_title{
+    background-color: #04a219;
+    width: 150px;
+    height: 30px;
+    color: #fff;
+    line-height: 30px;
+    text-align: center;
+    font-weight: 700;
+    margin-left: 30px;
+}
+#index_musicBlock .index_block_cns{
+    width: 900px;
+    height: 400px;
+    margin-left: 30px;
+    padding-left: 30px;
+    border: rgb(230, 221, 238) solid 1px;
+    border-top: #04a219 solid 2px;
+}
+#index_musicBlock .index_block_cns .index_singerItem{
+    width: 150px;
+    height: 170px;
+    display: block;
+    float: left;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+#index_musicBlock .index_block_cns .index_singerItem img:hover{
+    box-sizing: border-box;
+    border: #04a219 solid 2px;
+    cursor: pointer;
+}
+#index_musicBlock .index_block_cns .index_singerItem img{
+    max-width: 148px;
+    max-height: 148px;
+}
+#index_musicBlock .index_block_cns .index_singerItem div{
+    width: 150px;
+    height: 15px;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 10px;
+    line-height: 15px;
+    color: #5b5b5b;
+}
+#pageBtnBox{
+    width: 130px;
+    height: 30px;
+    position: absolute;
+    right: 60px;
+    bottom: 40px;
+}
+.pageBtn{
+    background-color: rgb(121, 121, 252);
+    width: 50px;
+    height: 25px;
+    float: right;
+    margin-right: 5px;
+    border-radius: 4px;
+    font-size: 12px;
+    text-align: center;
+    line-height: 25px;
+    cursor: pointer;
+}
+.pageBtn:hover{
+    background-color: rgb(79, 79, 252);
+}

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>音乐网站</title>
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    <link rel="stylesheet" type="text/css" href="/css/foot.css">
+    <link rel="stylesheet" href="/css/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/musicAudio.css">
+    <link rel="stylesheet" type="text/css" href="/css/lmusic.css">
+</head>
+<body>
+    <div id="head">
+        <div id="head-left">收藏我们</div>
+        <div id="head-right">
+            <div id="noLoginBox" class="loginBox">
+                <div id="login-btn" class="login_regist" onclick="loginBtn()">登录</div>
+                <div id="regist-btn" class="login_regist" onclick="loginBtn()">注册</div>
+            </div>
+            <div id="isLoginBox" class="loginBox">
+                <div id="logout-btn" class="login_regist" onclick="logout()">退出</div>
+                <div id="userName" ></div>
+            </div>
+        </div>
+    </div>
+    <div id="head2">
+        <div id="head2-contain">
+            <div id="head2-contain-left">音乐共享网站</div>
+            <div id="head2-contain-right">
+                <input type="text" id="head2-contain-right-text" placeholder="醉清风" style="height: 27px">
+                <div id="head2-btn">搜索</div>
+            </div>
+        </div>
+    </div>
+    <div id="guider1">
+        <div class="guider2">
+            <div class="guide" id="indexGd" onclick="indexGdClick()">首页</div>
+            <div class="guide" id="musicGd" onclick="musicGdClick()">在线音乐</div>
+            <div class="guide" id="singerGd" onclick="singerGdClick()">歌手</div>
+            <div class="guide" id="issueGd" onclick="issueGdClick()">音乐专辑</div>
+            <div class="guide" id="homeGd" onclick="homeGdClick()">在线空间</div>
+        </div>
+    </div>
+
+    <div id="box">
+        <div class="musicPlayBox">
+            <div id="playBox1">
+                <img alt="" id="musicCover">
+            </div>
+            <div id="playBox2">
+                <div id="geci">歌词</div>
+            </div>
+            <div id="playBox3" class="container"></div>
+        </div>
+    </div>
+    
+    <div id="commentBox">
+        <dir id="myCommentBox">
+            <div id="title">评论</div>
+            <textarea id="myCommentText" cols="100" rows="4"></textarea>
+            <img src="/userCover/user.jpg" id="myCommentCover">
+            <span id="commentLength">0/100</span>
+            <div id="commentBtn">评论</div>
+        </dir>
+        <div class="commentTitle">热门评论</div>
+        <div id="hotCommentList" class="commentList">
+        </div>
+
+        <div class="commentTitle">最新评论</div>
+        <div id="newCommentList" class="commentList">
+        </div>
+    </div>
+    
+    <div id="foot_div">
+        <div id="foot_cnts"><div>CopyRight: 1473366214@qq.com</div></div>
+    </div>
+</body>
+
+<script src="/js/jquery-3.4.1.js"></script>
+<script src="/js/lmusic.js"></script>
+<script src="/js/index2.js"></script>
+<script src="/js/musicAudio.js"></script>
+<script th:inline="javascript">
+    let message = [[${music}]];
+    let userMsg=[[${userMsg}]];
+    $("#musicCover").attr("src",message.cover);
+    getComment(message.musicid,"music");
+    getUserMsg(true);
+    if(userMsg!==null){
+        $("#myCommentCover").attr("src",userMsg.cover);
+    }
+</script>
+<script>
+    var source = [
+        {
+            url : message.path,
+            cover : message.cover,
+            name : message.name,
+        }
+    ];
+    var myMusic = $('.container').lmusic({
+        source : source,
+        height : 120,
+    });
+    myMusic.init();
+</script>
+</html>

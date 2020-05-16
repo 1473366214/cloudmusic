@@ -1,0 +1,31 @@
+#issueClass{
+    position: fixed;
+    left: 20px;
+    top: 160px;
+    width: 100px;
+    height: 247px;
+    border: #8592dd solid 2px;
+}
+#issueClass div{
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    background-color: #00e21e;
+}
+#issueClass ul{
+    margin: 0;
+    padding: 0;
+}
+#issueClass ul li{
+    list-style-type: none;
+    text-align: center;
+    line-height: 30px;
+    font-size: 12px;
+    background-color: #fff;
+    border-top: blueviolet solid 1px;
+    height: 30px;
+}
+#issueClass ul li:hover{
+    background-color: rgb(230, 221, 238);
+    cursor: pointer;
+}

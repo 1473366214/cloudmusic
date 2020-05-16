@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>个人页面</title>
+</head>
+<body>
+
+<h5>修改信息</h5>
+<form id="coverForm">
+    <span>头像：</span><input type="file" name="userCover" id="userCovers"><br>
+    <img width="100" id="userCoverImg" src=""><br>
+    <input type="button" id="updateUserCover" value="上传" onclick="uploadUserCover()">
+</form>
+<form id="UserMsgForm">
+    <span>姓名：</span><input type="text" name="name" placeholder="姓名"><br>
+    <span>介绍：</span><input type="text" name="introduction" placeholder="介绍"><br>
+    <span>年龄：</span><input type="text" name="age" value="0" placeholder="年龄"><br>
+    <span>性别：</span><input type="text" name="sex" placeholder="性别"><br>
+    <span>地址：</span><input type="text" name="address" placeholder="地址"><br>
+    <input type="hidden" name="cover">
+    <input type="button" id="updateUserMsg" value="保存" onclick="updateUserMessage()">
+</form>
+<span id="formMsg1"></span>
+<h4>密码</h4>
+<form id="passwordForm">
+    <input type="text" name="accounts" placeholder="帐号"><br>
+    <input type="password" name="oldPassword" placeholder="旧密码"><br>
+    <input type="password" name="newPassword" placeholder="新密码"><br>
+    <input type="button" value="更改" onclick="updateUserPassword()">
+</form>
+    <span id="passwordMsg"></span>
+<br>
+<div id="userSongList">
+
+</div>
+<br>
+<form id="addSongListForm">
+    <input type="text" name="songListName" placeholder="歌单名称"><br>
+    <input type="button" value="创建" onclick="addSongList()">
+</form>
+<br>
+<div id="userMusicList">
+
+</div>
+<br>
+<audio controls src="staticFile/music/周传雄 - 寂寞沙洲冷.mp3" id="musicAudio">
+
+</audio>
+<script type="text/javascript" src="/js/jquery-3.4.1.js"></script>
+<script type="text/javascript" src="/js/public.js"></script>
+<script type="text/javascript" src="/js/userMsg.js"></script>
+</body>
+</html>

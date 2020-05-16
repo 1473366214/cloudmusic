@@ -1,0 +1,130 @@
+#index_cnts_music_cnts{
+    width: 1000px;
+    height: 550px;
+    margin: 0 auto;
+    background-color: #fff;
+    margin-top: 20px;
+    padding-top: 30px;
+}
+        /* 
+        分类 
+        */
+#index_cnts_music_cnts #index_cnts_typeCnts{
+    width: 930px;
+    height: 80px;
+    margin-left: 30px;
+    border: rgb(230, 221, 238) solid 1px;
+}
+#index_cnts_music_cnts #index_cnts_typeCnts .index_cnts_item{
+    width: auto;
+    height: 30px;
+    margin-left: 10px;
+    margin-top: -9px;
+}
+#index_cnts_music_cnts #index_cnts_typeCnts .index_cnts_item div{
+    float: left;
+    width: 50px;
+    height: 30px;
+    margin-right: 10px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 14px;
+    font-weight: 800;
+}
+#index_cnts_music_cnts #index_cnts_typeCnts .index_cnts_item ul{
+    height: 25px;
+    background-color: #fff;
+    margin-left: 10px;
+    
+}
+.musicLi{
+    float: left;
+    width: 60px;
+    height: 25px;
+    list-style-type: none;
+    margin-left: 10px;
+    margin-top: 1px;
+    border: rgb(230, 221, 238) solid 1px;
+    border-radius:5px;
+    text-align: center;
+    line-height: 25px;
+    font-size: 12px;
+    cursor: pointer;
+}
+.musicLi:hover{
+    background-color: #04a219;
+    color: #fff;
+}
+.musicLiSelected{
+    background-color: #04a219;
+    color: #fff;
+}
+        /* 
+        列表 
+        */
+.music_block{
+    width: 1000px;
+    height: 450px;
+    background-color: #fff;
+    display: block;
+    margin: 0 auto;
+}
+.music_block .music_block_cns{
+    width: 900px;
+    height: 420px;
+    margin-left: 30px;
+    padding-left: 30px;
+    border: rgb(230, 221, 238) solid 1px;
+    border-top-width: 0px;
+    position: relative;
+}
+.music_block .music_block_cns #music_block_page{
+    width: 120px;
+    height: 30px;
+    position: absolute;
+    right: 0;
+    bottom: -40px;
+}
+.music_block .music_block_cns #music_block_page div{
+    height: 25px;
+    width: 50px;
+    font-size: 6px;
+    float: left;
+    text-align: center;
+    line-height: 25px;
+    margin-left: 5px;
+    border: rgb(230, 221, 238) solid 1px;
+    border-radius: 5px;
+}
+.music_block .music_block_cns #music_block_page div:hover{
+    background-color: #04a219;
+    color: #fff;
+    cursor: pointer;
+}
+.music_block .music_block_cns .music_item{
+    width: 150px;
+    height: 170px;
+    display: block;
+    float: left;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+.music_block .music_block_cns .music_item img:hover{
+    box-sizing: border-box;
+    border: #04a219 solid 2px;
+    cursor: pointer;
+}
+.music_block .music_block_cns .music_item img{
+    max-width: 148px;
+    max-height: 148px;
+}
+.music_block .music_block_cns .music_item div{
+    width: 148px;
+    height: 20px;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 10px;
+    line-height: 20px;
+    color: #5b5b5b;
+}

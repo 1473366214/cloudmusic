@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户登录</title>
+</head>
+<body>
+    <img id="userCover" src="/userCover/tly.jpeg" width="100px">
+    <h5>登录</h5>
+    <form id="userLoginForm">
+        <span>帐号：</span><input type="text" name="accounts"><br>
+        <span>密码：</span><input type="password" name="password"><br>
+        <input type="button" id="login" value="登录" onclick="userLogin()">
+    </form>
+    <p id="loginMsg"></p>
+
+    <h5>注册</h5>
+    <form id="userRegisterForm">
+        <span>帐号：</span><input type="text" name="accounts"><br>
+        <span>密码：</span><input type="password" name="password"><br>
+        <input type="button" id="register" value="注册" onclick="userRegister()">
+    </form>
+    <p id="registerMsg"></p>
+
+
+    <script type="text/javascript" src="/js/jquery-3.4.1.js"></script>
+    <script type="text/javascript" src="/js/public.js"></script>
+    <script type="text/javascript" src="/js/userLogin.js"></script>
+</body>
+</html>

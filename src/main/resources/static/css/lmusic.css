@@ -1,0 +1,95 @@
+/**
+ * create by lukez 2017/6/27
+ * @version 0.01
+ */
+ 
+#lmusic{
+	width: 100%;
+	height: 0;
+	background: #fff;
+	font-family: 微软雅黑, Arial, ​sans-serif;
+    color: rgb(85, 85, 85);
+	overflow: hidden;
+}
+#lmusic i{
+	cursor: pointer;
+	margin-right: 20px;
+}
+#lmusic i:hover{
+	color: #D4271E;
+}
+#lmusic-cover{
+	/*width: 30%;*/
+	height: 100%;
+	float: left;
+	font-size: 0;
+}
+#lmusic-cover > img{
+	width: 100%;
+}
+#lmusic-operate{
+	float: left;
+	/*width: 66%;*/
+	height: 100%;
+}
+#lmusic-operate > h2,#lmusic-operate > div{
+	margin-left:3%;
+	width: 94%;
+}
+#lmusic-name{
+	margin:0;
+	height: 35%;
+	font-size: 20%;
+	line-height: 100%;
+}
+#lmusic-control{
+	height: 40%;
+	font-size: 15%;
+}
+.lmusic-progress{
+    position: relative;
+    background: rgba(0, 0, 0, 0.3) none repeat scroll 0 0;
+    border-radius: 2.5px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5) inset;
+    cursor: pointer;
+    font-size: 14%;
+    line-height: 100%;
+    color: #D4271E;
+}
+.lmusic-progress-load{
+	position: relative;
+	float: left;
+	height: 100%;
+    background: #D4271E none repeat scroll 0 0;
+    border-radius: 2.5px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5) inset;
+    cursor: pointer;
+}
+.lmusic-progress-btn{
+	display: block;
+	position: absolute;
+	left: 48%;
+	top: -64%;
+	background: #fff;
+	border-radius: 100%;
+	z-index: 999;
+}
+
+#lmusic-vol{
+	float: right;
+	width: 60%;
+	height: 100%;
+}
+#lmusic-vol > div{
+	float: left;
+}
+#lmusic-vol .lmusic-progress{
+	width: 90%;
+	height: 15%;
+}
+#lmusic-play-progress{
+	height: 30%;
+}
+#lmusic-play-progress .lmusic-progress{
+	height: 20%;
+}
