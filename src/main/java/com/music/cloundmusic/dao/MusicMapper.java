@@ -17,4 +17,7 @@ public interface MusicMapper {
     public Music getMusicById(int musicId);
     public List<Music> getMusicBySingerId(int singerId);
     public List<Music> getMusicByAlbumId(int albumId);
+    public List<Music> getMusicByMusicName(String name);
+    public List<Music> getMusicBySingerName(String name);
+    public List<Music> getMusicByAlbumName(String name);
 }

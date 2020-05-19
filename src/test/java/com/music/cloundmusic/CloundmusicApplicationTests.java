@@ -1,9 +1,6 @@
 package com.music.cloundmusic;
 
-import com.music.cloundmusic.entity.Album;
-import com.music.cloundmusic.entity.Comment;
-import com.music.cloundmusic.entity.Music;
-import com.music.cloundmusic.entity.Singer;
+import com.music.cloundmusic.entity.*;
 import com.music.cloundmusic.service.*;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,11 +12,13 @@ import java.util.List;
 class CloundmusicApplicationTests {
 
     @Autowired
-    private AlbumService albumService;
+    private MusicService musicService;
     @Test
     void contextLoads() {
-        Album album= albumService.getAlbumById(1);
-        System.out.println(album.getName()+" "+album.getSinger().getName());
+        PageInfoHelper<Music> pageInfoHelper = musicService.searchMusic(2,5,"Live");
+        if(pageInfoHelper.getList().size()>0)
+        for(Music m:pageInfoHelper.getList())
+        System.out.println(m.getName());
     }
 
 }

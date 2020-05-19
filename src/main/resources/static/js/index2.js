@@ -19,9 +19,11 @@ function gdClick(div){
     $(".guide").removeClass("gdSelect");
     $(div).addClass("gdSelect");
 }
+//登录注册按钮
 function loginBtn(){
     window.location.href="/index/login";
 }
+//获取信息
 function getUserMsg(auto) {
     $.ajax({
         type:"GET",
@@ -44,6 +46,7 @@ function getUserMsg(auto) {
         }
     });
 }
+//退出按钮
 function logout() {
     let conf=confirm("确定退出吗？");
     if(conf===false)
@@ -72,3 +75,11 @@ function fillBox(box,cls,data) {
             "</div>");
     }
 }
+//搜索框
+$("#head2-btn").click(function () {
+    let input= $("#head2-contain-right-text");
+    let text=input.val();
+    if(text==="")
+        text=input.attr("placeholder");
+    window.location.href="/music/searchMusic?key="+text;
+});

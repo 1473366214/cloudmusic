@@ -9,6 +9,7 @@ public class PageInfoHelper<T> {
     private int pageNum;
     private int pages;
 
+    public PageInfoHelper(){}
     public PageInfoHelper(PageInfo pageInfo) {
         this.list = pageInfo.getList();
         this.pageNum=pageInfo.getPageNum();

@@ -1,11 +1,16 @@
 package com.music.cloundmusic.service.Impl;
 
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.music.cloundmusic.dao.MusicMapper;
 import com.music.cloundmusic.entity.Music;
+import com.music.cloundmusic.entity.PageInfoHelper;
 import com.music.cloundmusic.service.MusicService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -47,5 +52,12 @@ public class MusicServiceImpl implements MusicService {
     @Override
     public List<Music> getMusicByAlbumId(int albumId) {
         return musicMapper.getMusicByAlbumId(albumId);
+    }
+
+    @Override
+    public PageInfoHelper<Music> searchMusic(int pageNum, int pageSize, String name) {
+        PageHelper.startPage(pageNum,pageSize);
+        List<Music> list1=musicMapper.getMusicByMusicName("%"+name+"%");
+        return new PageInfoHelper<>(new PageInfo<Music>(list1));
     }
 }

@@ -38,13 +38,17 @@ function generalAlbum(box,data) {
     select.children().remove();
     for(let i=0;i<data.length;i++){
         let html='<div class="index_item">\n' +
-            '                    <a href="/album/albumInfo?albumId='+data[i].albumid+'"><img src="'+data[i].cover+'" class="album"></a>\n' +
+            '                    <img src="'+data[i].cover+'" class="album" id="album'+data[i].albumid+'">\n' +
             '                    <div>'+data[i].name+'</div>\n' +
             '                </div>';
         select.append(html);
     }
 }
-
+//点击图片
+$(".index_block_cns").on("click",".album",function () {
+    let id=this.id.substring(5);
+    top.location.href="/album/albumInfo?albumId="+id;
+});
 //上一页
 $("#lastPage").click(function () {
     if(pageNum===1){

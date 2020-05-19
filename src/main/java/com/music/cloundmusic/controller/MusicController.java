@@ -89,4 +89,27 @@ public class MusicController {
 
         return musicService.getMusicBySingerId(singerId);
     }
+    //搜索音乐
+    @RequestMapping(value = "/searchMusic",method = RequestMethod.GET)
+    public String searchMusic(@RequestParam(name = "pageNum",defaultValue = "1",required = false)Integer pageNum,
+                              @RequestParam(name = "pageSize",defaultValue = "10",required = false)int pageSize,
+                              String key,Model model){
+        PageInfoHelper<Music> pageInfoHelper =musicService.searchMusic(pageNum,pageSize,key);
+        for(Music m:pageInfoHelper.getList()){
+            m.setCover(relativePath+m.getCover());
+        }
+        model.addAttribute("musicList",pageInfoHelper);
+        model.addAttribute("key",key);
+        return "searchPage";
+    }
+    //
+    @ResponseBody
+    @RequestMapping(value = "/searchMusicPage",method = RequestMethod.GET)
+    public PageInfoHelper<Music> searchMusicPage(int pageNum,int pageSize,String key,Model model){
+        PageInfoHelper<Music> pageInfoHelper =musicService.searchMusic(pageNum,pageSize,key);
+        for(Music m:pageInfoHelper.getList()){
+            m.setCover(relativePath+m.getCover());
+        }
+        return pageInfoHelper;
+    }
 }

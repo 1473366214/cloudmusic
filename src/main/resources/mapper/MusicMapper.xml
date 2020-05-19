@@ -35,4 +35,16 @@
     <select id="getMusicByAlbumId" parameterType="int" resultType="Music">
         select musicid, name from music where albumid=#{albumId}
     </select>
+
+    <select id="getMusicByMusicName" parameterType="string" resultType="Music">
+        select musicid,name,cover from music where name like #{name}
+    </select>
+
+    <select id="getMusicBySingerName" parameterType="String" resultType="Music">
+        select music.musicid,music.name,music.cover from music join singer s on music.singerid = s.singerid and s.name like #{name}
+    </select>
+
+    <select id="getMusicByAlbumName" parameterType="string" resultType="Music">
+        select music.musicid,music.name,music.cover from music join album a on music.albumid = a.albumid and a.name like #{name}
+    </select>
 </mapper>
