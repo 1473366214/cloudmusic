@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>音乐网站</title>
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    <link rel="stylesheet" type="text/css" href="/css/searchPage.css">
+    <link rel="stylesheet" type="text/css" href="/css/foot.css">
+</head>
+<body>
+    <div id="head">
+        <div id="head-left">收藏我们</div>
+        <div id="head-right">
+            <div id="login-btn" class="login_regist" onclick="loginBtn()">登录</div>
+            <div id="regist-btn" class="login_regist" onclick="loginBtn()">注册</div>
+        </div>
+    </div>
+    <div id="head2">
+        <div id="head2-contain">
+            <div id="head2-contain-left">音乐共享网站</div>
+            <div id="head2-contain-right">
+                <input type="text" id="head2-contain-right-text" placeholder="醉清风">
+                <div id="head2-btn">搜索</div>
+            </div>
+        </div>
+    </div>
+    <div id="guider1">
+        <div class="guider2">
+            <div class="guide" id="indexGd" onclick="indexGdClick()">首页</div>
+            <div class="guide"id="musicGd" onclick="musicGdClick()">在线音乐</div>
+            <div class="guide"id="singerGd" onclick="singerGdClick()">歌手</div>
+            <div class="guide"id="issueGd" onclick="issueGdClick()">音乐专辑</div>
+            <div class="guide"id="homeGd" onclick="homeGdClick()">在线空间</div>
+        </div>
+    </div>
+
+    
+    <div id="searchMusic_cnts" class="index_cnts">
+        <div id="searchTitle">
+           <div><span th:text="${key}"></span>的搜索结果:</div>
+        </div>
+        <div class="music_block">
+            <div class="music_block_cns">
+                <div id="searchMusicPage">
+                    <div class="music_item" th:each="m:${musicList.getList()}">
+                        <img class="music" th:attr="id='music'+${m.getMusicid()}" th:src="${m.getCover()}">
+                        <div th:text="${m.getName()}"></div>
+                    </div>
+                </div>
+                <div id="music_block_page">
+                    <div class="music_block_page_btn" id="lastPage">上一页</div>
+                    <div class="music_block_page_btn" id="nextPage">下一页</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div id="foot_div">
+        <div id="foot_cnts"><div>CopyRight: 1473366214@qq.com</div></div>
+    </div>
+</body>
+
+<script src="/js/jquery-3.4.1.js"></script>
+<script src="/js/index2.js"></script>
+<script th:inline="javascript">
+    let musicList=[[${musicList}]];
+    let pages=musicList.pages;
+    let pageNum=musicList.pageNum;
+    let key=[[${key}]]
+</script>
+<script src="/js/searchPage.js"></script>
+</html>

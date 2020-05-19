@@ -111,7 +111,7 @@ $("#commentBtn").click(function () {
         url: "/setComment",
         data: {"keyId":message.musicid,"type":"music","commentText":text},
         success:function (data) {
-            if (data===null){
+            if (data===null||data===""){
                 let conf=confirm("你还没登录，请先登录！");
                 if(conf===true){
                     top.location.href="/index/login";
