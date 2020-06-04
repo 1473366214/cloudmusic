@@ -7,11 +7,11 @@ default-music-over: /musicCover/music.jpg
 
 default-username: 小风
 #静态文件访问绝对路径
-staticFilePath: file:F:/projectFile/
+staticFilePath: file:D:/projectFile/
 #相对路径
 relativePath: /staticFile/
 #上传路径
-absolutePath: F:\\projectFile\\
+absolutePath: D:\\projectFile\\
 
 user-interceptor:
   userPage:
