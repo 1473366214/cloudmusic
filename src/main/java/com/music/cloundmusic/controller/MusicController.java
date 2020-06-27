@@ -3,7 +3,8 @@ package com.music.cloundmusic.controller;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.music.cloundmusic.entity.Music;
-import com.music.cloundmusic.entity.PageInfoHelper;
+import com.music.cloundmusic.util.ApplicationHelper;
+import com.music.cloundmusic.util.PageInfoHelper;
 import com.music.cloundmusic.entity.User;
 import com.music.cloundmusic.service.MusicService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,13 +19,20 @@ import java.util.List;
 @Controller
 @RequestMapping("/music")
 public class MusicController {
-    @Value("${relativePath}")
-    private String relativePath;
+    private ApplicationHelper applicationHelper;
+
     private MusicService musicService;
     @Autowired
     public void setMusicService(MusicService musicService) {
         this.musicService = musicService;
     }
+    @Autowired
+    public void setApplicationHelper(ApplicationHelper applicationHelper) {
+        this.applicationHelper = applicationHelper;
+    }
+
+
+
 
     //获得所有音乐
     @ResponseBody
@@ -35,7 +43,7 @@ public class MusicController {
         PageHelper.startPage(pageNum,pageSize);
         List<Music> list=musicService.getAllMusic(location,category);
         for(Music music:list){
-            music.setCover(relativePath+music.getCover());
+            music.setCover(applicationHelper.getRelativePath()+music.getCover());
         }
         PageInfo<Music> pageInfo=new PageInfo<>(list);
         return new PageInfoHelper<>(pageInfo);
@@ -49,9 +57,10 @@ public class MusicController {
             return null;
         List<Music> list = musicService.getMusicInSongList(songlistid);
         for(Music music:list){
-            music.setPath(relativePath+music.getPath());
-            music.setCover(relativePath+music.getCover());
+            music.setPath(applicationHelper.getRelativePath()+music.getPath());
+            music.setCover(applicationHelper.getRelativePath()+music.getCover());
         }
+        String s=applicationHelper.getRelativePath();
         return list;
     }
     //热门音乐
@@ -72,8 +81,8 @@ public class MusicController {
         Music music=musicService.getMusicById(musicId);
         if(music!=null){
             music.setMusicid(musicId);
-            music.setPath(relativePath+music.getPath());
-            music.setCover(relativePath+music.getCover());
+            music.setPath(applicationHelper.getRelativePath()+music.getPath());
+            music.setCover(applicationHelper.getRelativePath()+music.getCover());
             model.addAttribute("music",music);
         }
         User user=(User)request.getSession().getAttribute("userMsg");
@@ -96,7 +105,7 @@ public class MusicController {
                               String key,Model model){
         PageInfoHelper<Music> pageInfoHelper =musicService.searchMusic(pageNum,pageSize,key);
         for(Music m:pageInfoHelper.getList()){
-            m.setCover(relativePath+m.getCover());
+            m.setCover(applicationHelper.getRelativePath()+m.getCover());
         }
         model.addAttribute("musicList",pageInfoHelper);
         model.addAttribute("key",key);
@@ -108,7 +117,7 @@ public class MusicController {
     public PageInfoHelper<Music> searchMusicPage(int pageNum,int pageSize,String key,Model model){
         PageInfoHelper<Music> pageInfoHelper =musicService.searchMusic(pageNum,pageSize,key);
         for(Music m:pageInfoHelper.getList()){
-            m.setCover(relativePath+m.getCover());
+            m.setCover(applicationHelper.getRelativePath()+m.getCover());
         }
         return pageInfoHelper;
     }

@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
@@ -14,8 +16,10 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import java.util.ArrayList;
 import java.util.List;
 
-@SpringBootConfiguration
+@Component
+@PropertySource(value = "classpath:application.yml")
 @ConfigurationProperties(prefix = "user-interceptor")
+@SpringBootConfiguration
 public class Configuration implements  WebMvcConfigurer {
 
     @Value("${staticFilePath}")
@@ -26,9 +30,6 @@ public class Configuration implements  WebMvcConfigurer {
     private UserInterceptor userInterceptor;
     private List<String> userPage = new ArrayList<>();
 
-    public void setUserPage(List<String> userPage) {
-        this.userPage = userPage;
-    }
     @Autowired
     public void setAdminInterceptor(AdminInterceptor adminInterceptor) {
         this.adminInterceptor = adminInterceptor;
@@ -36,6 +37,15 @@ public class Configuration implements  WebMvcConfigurer {
     @Autowired
     public void setUserInterceptor(UserInterceptor userInterceptor) {
         this.userInterceptor = userInterceptor;
+    }
+
+
+    public List<String> getUserPage() {
+        return userPage;
+    }
+
+    public void setUserPage(List<String> userPage) {
+        this.userPage = userPage;
     }
 
     @Override

@@ -1,7 +1,7 @@
 package com.music.cloundmusic.service;
 
 import com.music.cloundmusic.entity.Music;
-import com.music.cloundmusic.entity.PageInfoHelper;
+import com.music.cloundmusic.util.PageInfoHelper;
 
 import java.util.List;
 

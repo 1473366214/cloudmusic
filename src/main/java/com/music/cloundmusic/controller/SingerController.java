@@ -2,10 +2,9 @@ package com.music.cloundmusic.controller;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import com.music.cloundmusic.entity.PageInfoSinger;
+import com.music.cloundmusic.util.PageInfoSinger;
 import com.music.cloundmusic.entity.Singer;
 import com.music.cloundmusic.service.SingerService;
-import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -43,6 +42,7 @@ public class SingerController {
         for(Singer singer:list){
             singer.setCover(relativePath+singer.getCover());
         }
-        return new PageInfoSinger(new PageInfo<>(list));
+        PageInfo<Singer> pageInfo=new PageInfo<>(list);
+        return new PageInfoSinger(pageInfo);
     }
 }

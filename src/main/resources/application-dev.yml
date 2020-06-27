@@ -1,0 +1,7 @@
+#自定义数据
+#user-cover-path: musicCover/
+
+#静态文件访问绝对路径
+staticFilePath: file:D:/projectFile/
+#上传路径
+absolutePath: D:\\projectFile\\

@@ -1,125 +1,287 @@
-*{
-	margin: 0;
-	padding: 0;
-}
-#box{
-	width: 1100px;
-	height: 560px;
+/* 内容 */
+.Box{
 	background-color: #fff;
-	display: block;
-	margin: 0 auto;
+	width: 1002px;
+	position: relative;
+	margin-left: 50%;
+	left: -500px;
 	margin-top: 20px;
-	position: relative;
-	border-radius: 10px;
 }
-.musicPlayBox{
-	width: 1000px;
-	height: 520px;
-	position: relative;
-	left: 50px;
-	top: 20px;
-	border: rgb(230, 221, 238) solid 1px;
-	border-radius: 20px;
-	overflow: hidden;
+/* 介绍信息 */
+
+/* 图片 */
+.BTop{
+	width: 100%;
+	height: 220px;
 }
-#playBox1{
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 700px;
-	height: 400px;
-	overflow: hidden;
+.BTLeft{
+	float: left;
+	margin-left: 90px;
+	width: 210px;
+	height: 210px;
 }
-#playBox1 img{
-	width: 700px;
-	height: 700px;
+.BTLeft img{
+	margin: 30px;
+	width: 150px;
+	height: 150px;
+	border-radius: 75px;
 }
-#playBox2{
-	position: absolute;
-	width: 300px;
-	height: 520px;
-	right: 0;
-	top: 0;
-	box-sizing: border-box;
-	border-left: rgb(230, 221, 238) solid 1px;
+/* 信息 */
+.BTRight{
+	float: right;
+	margin-right: 90px;
+	width: 600px;
+	height: 210px;
 }
-#geci{
-	width: 299px;
+.spans{
+	margin-left: 20px;
+	margin-top: 10px;
+}
+.musicName{
+	height: 40px;
+	font-size: 28px;
+	margin-left: 60px;
+}
+.singer{
+	font-size: 14px;
+}
+.album{
+	font-size: 14px;
+}
+.btnList{
+	height: 40px;
+	margin-left: 20px;
+	margin-top: 15px;
+}
+.btn{
+	display: inline-block;
+	width: 60px;
 	height: 30px;
-	background-color: rgb(77, 185, 77);
+	border-radius: 5px;
 	text-align: center;
-	line-height: 30px;
+	line-height: 28px;
+	margin-right: 10px;
+	border: #ccc solid 1px;
+	box-sizing: border-box;
+	cursor: pointer;
+	background-image: linear-gradient(to top, #f3eaea, #ffffff);
 }
-#playBox3{
-	position: absolute;
+.btn:hover{
+	background-image: linear-gradient(to top, #ebdbdb, #f7f0f0);
+}
+#play{
+	background-image: linear-gradient(to top, #aa4fff, #9798ff);
+	border: #fff solid 1px;;
+	color: #fff;
+}
+#play:hover{
+	background-image: linear-gradient(to top, #982aff, #8c8eff);
+}
+.btn a{
+	color: black;
+	text-decoration: none;
+}
+
+/* 底部播放 */
+.BBot{
+	width: 100%;
+	height: 130px;
+	background-color:rgb(66, 66, 66);
+}
+.mImg{
+	width: 100px;
+	height: 100px;
+	float: left;
+	margin-left: 20px;
+	margin-right: 20px;
+	border-radius: 50px;
+	margin-top: 15px;
+}
+.dv{
+	height: 40px;
+	color: #fff;
+	line-height: 40px;
+}
+.mName{
+	font-size: 24px;
+}
+.mBtn{
+	margin-top: 10px;
+}
+.mBtn i{
+	cursor: pointer;
+	width: 30px;
+}
+.mBtn i:hover{
+	text-shadow: 1px 1px 1px rgb(197, 173, 173);
+}
+.playBtn{
+	font-size: 26px !important;
+	margin-right: 20px;
+}
+.love{
+	font-size: 22px !important;
+	margin-left: 40px;
+}
+.voiceBox{
+	display: inline-block;
+	height: 40px;
+	width: 400px;
+	position: relative;
+}
+.voice{
+	margin-left: 10px;
+	font-size: 20px !important;
+}
+
+/* 进度条 */
+.time{
+	display: inline-block;
 	width: 700px;
-	height: 120px;
-	left: 0;
-	bottom: 0;
-	border-top: rgb(230, 221, 238) solid 1px;
+	height: 7px;
+	background-color: rgb(157, 157, 170);
+	margin-top: 20px;
+	cursor: pointer;
+	border-radius: 4px;
+	position: relative;
 }
+.length{
+	width: 0;
+	height: 7px;
+	background-color: rgb(255, 43, 43);
+	cursor: pointer;
+	border-radius: 4px;
+}
+.doc{
+	position: absolute;
+	left: -6px;
+	top: -7px;
+	font-size: 20px !important;
+	color: #fff;
+}
+.doc:hover{
+	text-shadow: 1px 1px 1px lightgray
+}
+.unSelect{
+	-moz-user-select: -moz-none;
+	-moz-user-select: none;
+	-o-user-select:none;
+	-khtml-user-select:none;
+	-webkit-user-select:none;
+	-ms-user-select:none;
+	user-select:none;
+}
+.nowTime{
+	margin-left: 10px;
+	color: rgb(231, 210, 210);
+}
+.allTime{
+	color: rgb(196, 164, 164);
+}
+
+/* 音量条 */
+.soud{
+	display: inline-block;
+	width: 150px;
+	height: 4px;
+	background-color: rgb(157, 157, 170);
+	cursor: pointer;
+	border-radius: 3px;
+	position: absolute;
+	top: 18px;
+	left: 35px;
+}
+.soudLength{
+	width: 0;
+	height: 4px;
+	background-color: rgb(120, 120, 253);
+	cursor: pointer;
+	border-radius: 3px;
+}
+.doc1{
+	position: absolute;
+	left: -6px;
+	top: -6px;
+	color: rgb(181, 181, 238);
+}
+.doc1:hover{
+	color: rgb(255, 255, 255);
+	text-shadow: 1px 1px 1px lightgray;
+}
+
 
 /* 评论 */
 #commentBox{
-	width: 1100px;
-	height: auto;
 	background-color: #fff;
-	display: block;
-	margin: 0 auto;
-	margin-top: 20px;
-	border-radius: 10px;
-	overflow: hidden;
+	width: 1002px;
+	position: relative;
+	margin-left: 50%;
+	padding: 10px 0 40px 0;
+	left: -500px;
+	top: 15px;
 }
 #myCommentBox{
 	position: relative;
-	width: 1100px;
-	height: 220px;
+	width: 100%;
+	height: 170px;
 }
 #title{
-	width: 900px;
+	width: 95%;
 	height: 40px;
-	position: absolute;
-	left: 100px;
-	top: 20px;
+	padding-left: 5%;
 	font-size: 20px;
 	border-bottom: #c20c0c solid 2px;
 	line-height: 40px;
 }
+#title span{
+	font-size: 12px;
+	color: #838383;
+	margin-left: 30px;
+}
+.commentNum{
+	margin-left: 0 !important;
+}
 #myCommentText{
 	position: absolute;
-	top: 90px;
-	right: 150px;
+	top: 60px;
+	right: 5%;
 	font-size: 14px;
 	outline: none;
+	border-color: #ccc;
 	border-radius: 5px;
 	padding: 5px;
+	resize: none;
+	width:81%;
+	height: 65px;
 }
 #myCommentCover{
 	width: 60px;
 	height: 60px;
 	position: absolute;
-	top: 95px;
-	left: 150px;
+	top: 68px;
+	left: 5%;
 }
 #commentLength{
 	width: 55px;
-	height: 30px;
+	height: 20px;
 	position: absolute;
-	top: 175px;
-	right: 225px;
+	top: 145px;
+	right: 11%;
+	font-size: 13px;
 	text-align: center;
-	line-height: 30px;
+	line-height: 20px;
 	color: rgb(114, 114, 114);
 }
 #commentBtn{
-	width: 55px;
-	height: 30px;
+	width: 45px;
+	height: 20px;
 	background-color: rgb(79, 79, 252);
 	position: absolute;
-	top: 175px;
-	right: 160px;
+	top: 145px;
+	right: 5%;
+	font-size: 13px;
 	text-align: center;
-	line-height: 30px;
+	line-height: 20px;
 	color: #fff;
 	border-radius: 3px;
 	cursor: pointer;
@@ -127,55 +289,66 @@
 #commentBtn:hover{
 	background-color: rgb(121, 121, 252);
 }
+
 .commentTitle{
-	margin-left: 100px;
-	width: 100px;
+	margin-left: 5%;
+	width: 90%;
 	height: 30px;
-	font-size: 16px;
+	font-size: 14px;
+	font-weight: 900;
+	line-height: 30px;
+	border-bottom: #c20c0c solid 1px;
+	margin-bottom: 10px;
 }
 
 /* 评论列表 */
 .commentList{
-	width: 900px;
+	width: 90%;
 	height: auto;
-	display: block;
-	margin: 0 auto;
-	margin-bottom: 20px;
+	margin-left: 5%;
 }
 .commentItem{
-	width: 900px;
-	height: 110px;
-	border-top: #ccc solid 1px;
-	padding: 15px 0;
-	position: relative;
+	width: 100%;
+	min-height: 70px;
+	border-bottom: #ccc dashed 1px;
+	padding-bottom: 5px;
+	margin-bottom: 10px;
 }
 .commentItem .itemLeft{
 	width: 60px;
-	height: 100px;
-	position: absolute;
-	left: 50px;
+	height: 60px;
+	float: left;
 }
 .commentItem .itemLeft img{
 	width: 60px;
 }
 .commentItem .itemRight{
-	width: 730px;
-	height: 100px;
-	position: absolute;
-	left: 120px;
+	width: 92%;
+	min-height: 60px;
+	margin-left: 8%;
 }
 .commentItem .itemRightTop{
 	width: 100%;
-	height: 75px;
+	min-height: 44px;
+	font-size: 13px;
+	overflow: auto;
 }
-.commentItem .itemRightTop span a{
+.commentItem .itemRightTop div{
+	height: auto;
+}
+.commentItem .itemRightTop div a{
 	color: blue;
 	text-decoration: none;
 }
-.commentItem .itemRightTop span a:hover{
+.commentItem .itemRightTop div a:hover{
 	text-decoration: underline;
 }
-
+.itemRightBottom{
+	height: 16px;
+	margin-top: 2px;
+	font-size: 12px;
+	margin-bottom: 0;
+}
 .commentItem .itemRightBottom .commentTime{
 	float: left;
 	color: rgb(114, 114, 114);
@@ -186,7 +359,7 @@
 .commentItem .itemRightBottom .commentGrate span{
 	float: right;
 	margin-right: 10px;
-	font-size: 14px;
+	font-size: 12px;
 	color: rgb(114, 114, 114);
 }
 .commentItem .itemRightBottom .commentGrate div{
@@ -194,9 +367,11 @@
 	background-color: rgb(79, 79, 255);
 	color: #fff;
 	width: 40px;
+	height: 17px;
 	text-align: center;
-	font-size: 14px;
-	border-radius: 5px;
+	font-size: 12px;
+	line-height: 17px;
+	border-radius: 3px;
 	cursor: pointer;
 }
 .commentItem .itemRightBottom .commentGrate div:hover{

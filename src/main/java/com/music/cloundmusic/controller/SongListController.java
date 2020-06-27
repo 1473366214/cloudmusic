@@ -17,7 +17,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/songList")
 public class SongListController {
-    @Value("${default-music-over}")
+    @Value("${default-music-cover}")
     private String defaultMusicCover;
     @Value("${relativePath}")
     private String relativePath;

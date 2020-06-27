@@ -1,27 +1,26 @@
-package com.music.cloundmusic.entity;
+package com.music.cloundmusic.util;
 
 import com.github.pagehelper.PageInfo;
 
 import java.util.List;
 
-public class PageInfoSinger {
-    List<Singer> list;
+public class PageInfoHelper<T> {
+    List<T> list;
     private int pageNum;
     private int pages;
 
-    public PageInfoSinger(){}
-
-    public PageInfoSinger(PageInfo<Singer> pageInfo){
-        this.list=pageInfo.getList();
+    public PageInfoHelper(){}
+    public PageInfoHelper(PageInfo pageInfo) {
+        this.list = pageInfo.getList();
         this.pageNum=pageInfo.getPageNum();
         this.pages=pageInfo.getPages();
     }
 
-    public List<Singer> getList() {
+    public List<T> getList() {
         return list;
     }
 
-    public void setList(List<Singer> list) {
+    public void setList(List<T> list) {
         this.list = list;
     }
 

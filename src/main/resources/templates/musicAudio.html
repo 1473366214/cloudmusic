@@ -1,14 +1,11 @@
 <!DOCTYPE html>
-<html lang="zh">
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>音乐网站</title>
     <link rel="stylesheet" type="text/css" href="/css/index.css">
-    <link rel="stylesheet" type="text/css" href="/css/foot.css">
     <link rel="stylesheet" href="/css/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/css/musicAudio.css">
-    <link rel="stylesheet" type="text/css" href="/css/lmusic.css">
 </head>
 <body>
     <div id="head">
@@ -42,67 +39,107 @@
             <div class="guide" id="homeGd" onclick="homeGdClick()">在线空间</div>
         </div>
     </div>
-
-    <div id="box">
-        <div class="musicPlayBox">
-            <div id="playBox1">
-                <img alt="" id="musicCover">
+    <!-- 内容 -->
+    <div class="Box">
+        <div class="BTop">
+            <div class="BTLeft">
+                <img th:src="${music.getCover()}" alt="error">
             </div>
-            <div id="playBox2">
-                <div id="geci">歌词</div>
+            <!-- 右侧信息 -->
+            <div class="BTRight">
+                <div class="spans musicName">
+                    <span id="msg-music-name" th:text="${music.getName()}"></span>
+                </div>
+                <div class="spans singer">
+                    <span>歌手：<span th:text="nulls"></span></span>
+                </div>
+                <div class="spans album">
+                    <span>专辑：<span th:text="nulls"></span></span>
+                </div>
+                <div class="btnList">
+                    <div class="btn" id="play">播放</div>
+                    <div class="btn">分享</div>
+                    <div class="btn">收藏</div>
+                    <div class="btn">下载</div>
+                    <div class="btn" id="focusComment">评论</div>
+                </div>
             </div>
-            <div id="playBox3" class="container"></div>
+        </div>
+        <!-- 播放器 -->
+        <div class="BBot">
+        <img th:src="${music.getCover()}" alt="error" class="mImg">
+        <div class="dv mName" id="musicName" th:text="${music.getName()}"></div>
+        <div class="dv mBtn unSelect" id="mark">
+            <i class="fa fa-backward playBtn"></i>
+            <i class="fa fa-play playBtn audioPlay"></i>
+            <i class="fa fa-forward playBtn"></i>
+            <i class="fa fa-heart love"></i>
+            <div class="voiceBox unSelect">
+                <i class="fa fa-volume-up voice"></i>
+                <div class="soud">
+                    <div class="soudLength">
+                        <i class="fa fa-dot-circle-o doc1" id="doc1"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="dv mBar unSelect">
+            <div class="time">
+                <div class="length">
+                    <i class="fa fa-dot-circle-o doc" id="doc"></i>
+                </div>
+            </div>
+            <span class="nowTime">00:00</span><span class="allTime">/00:00</span>
         </div>
     </div>
-    
+    </div>
+
+    <audio th:src="${music.getPath()}" id="audio" preload="auto"></audio>
+
+    <!-- 评论 -->
     <div id="commentBox">
-        <dir id="myCommentBox">
-            <div id="title">评论</div>
-            <textarea id="myCommentText" cols="100" rows="4"></textarea>
-            <img src="/userCover/user.jpg" id="myCommentCover">
+        <div id="myCommentBox">
+            <div id="title">评论<span>共<span class="commentNum">123</span>条评论</span></div>
+            <textarea id="myCommentText" ></textarea>
+            <img th:src="${music.getCover()}" id="myCommentCover">
             <span id="commentLength">0/100</span>
             <div id="commentBtn">评论</div>
-        </dir>
+        </div>
         <div class="commentTitle">热门评论</div>
         <div id="hotCommentList" class="commentList">
+            <div class="commentItem" >
+                <div class="itemLeft">
+                    <img src="img/img.jpg" alt="">
+                </div>
+                <div class="itemRight">
+                    <div class="itemRightTop">
+                        <div class="commentText">
+                            <a href="#">sasa:</a>
+                            阿斯蒂芬卡拉和；爱丽丝打开噶多连杆后欸给了傻瓜阿里斯顿好噶；
+                            阿斯兰的好i俄国沙花都开了阿喀琉斯大奶俄国八十数量可观吧阿瑟
+                            部分埃勒克哦i阿婆厚爱问题去哦欸图 好人韩国
+                        </div>
+                    </div>
+                    <div class="itemRightBottom">
+                        <span class="commentTime">2020-02-10</span>
+                        <div class="commentGrate">
+                            <div class="grate" id=">点赞</div>
+                            <span id=">10赞</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+
         </div>
 
         <div class="commentTitle">最新评论</div>
         <div id="newCommentList" class="commentList">
         </div>
-    </div>
-    
-    <div id="foot_div">
-        <div id="foot_cnts"><div>CopyRight: 1473366214@qq.com</div></div>
-    </div>
-</body>
+        </div>
 
+</body>
 <script src="/js/jquery-3.4.1.js"></script>
-<script src="/js/lmusic.js"></script>
-<script src="/js/index2.js"></script>
 <script src="/js/musicAudio.js"></script>
-<script th:inline="javascript">
-    let message = [[${music}]];
-    let userMsg=[[${userMsg}]];
-    $("#musicCover").attr("src",message.cover);
-    getComment(message.musicid,"music");
-    getUserMsg(true);
-    if(userMsg!==null){
-        $("#myCommentCover").attr("src",userMsg.cover);
-    }
-</script>
-<script>
-    var source = [
-        {
-            url : message.path,
-            cover : message.cover,
-            name : message.name,
-        }
-    ];
-    var myMusic = $('.container').lmusic({
-        source : source,
-        height : 120,
-    });
-    myMusic.init();
-</script>
+<script src="/js/index2.js"></script>
 </html>
