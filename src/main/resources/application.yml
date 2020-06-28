@@ -1,0 +1,18 @@
+#默认用户头像
+default-user-cover: /userCover/user.jpg
+#默认歌曲封面
+default-music-cover: /musicCover/music.jpg
+#默认名称
+default-username: 小风
+#相对路径
+relativePath: /staticFile/
+#登录过滤URL
+user-interceptor:
+  userPage:
+    - /user/updateUserMsg.do
+    - /user/updateUserPassword.do
+    - /user/userLogout.do
+    - /user/getUserMsg.do
+    - /message
+    - /songList/**
+    - /addLikes
