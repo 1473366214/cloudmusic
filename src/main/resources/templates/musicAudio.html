@@ -122,8 +122,8 @@
                     <div class="itemRightBottom">
                         <span class="commentTime" th:text="${comment.getCreatetime()}"></span>
                         <div class="commentGrate">
-                            <div class="grate" th:attr="id='commentLikeBtn'+${comment.getCommentid()}">点赞</div>
-                            <span th:text="${comment.getLikes()}+'赞'" th:attr="id='commentLikeNum'+${comment.getCommentid()}"></span>
+                            <div class="grate" th:attr="id='hotCommentLike'+${comment.getCommentid()}">点赞</div>
+                            <span th:text="${comment.getLikes()}+'赞'" th:attr="id='hotCommentLike'+${comment.getCommentid()}+'Num'"></span>
                         </div>
                     </div>
                 </div>
@@ -146,8 +146,8 @@
                     <div class="itemRightBottom">
                         <span class="commentTime" th:text="${comment.getCreatetime()}"></span>
                         <div class="commentGrate">
-                            <div class="grate" th:attr="id='commentLikeBtn'+${comment.getCommentid()}">点赞</div>
-                            <span th:text="${comment.getLikes()}+'赞'" th:attr="id='commentLikeNum'+${comment.getCommentid()}"></span>
+                            <div class="grate" th:attr="id='newCommentLike'+${comment.getCommentid()}">点赞</div>
+                            <span th:text="${comment.getLikes()}+'赞'" th:attr="id='newCommentLike'+${comment.getCommentid()}+'Num'"></span>
                         </div>
                     </div>
                 </div>

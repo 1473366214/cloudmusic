@@ -23,6 +23,7 @@ function addComment(userId,keyid,type) {
         }
     })
 }
+//评论列表添加HTML
 function addNewComment(commentNow) {
     let html='<div class="commentItem" >\n' +
         '                <div class="itemLeft">\n' +
@@ -45,4 +46,28 @@ function addNewComment(commentNow) {
         '                </div>\n' +
         '            </div>';
     $("#newCommentList").prepend(html);
+}
+
+//上传点赞数
+$(".commentList").on("click",".grate",function () {
+    isLoginWin(userMsg.userid);
+    let commentId=this.id;
+    let id=commentId.substring(14);
+    $.ajax({
+        type:"PUT",
+        url: "/addLikes",
+        data: {"commentId":id},
+        success:function (data) {
+            addLikes(commentId,data);
+        },error:function (date) {
+            console.log(date);
+        }
+    });
+});
+//改变点赞数
+function addLikes(commentId,data) {
+    let likesTex=$("#"+commentId+"Num");
+    let text=likesTex.text();
+    let likes=parseInt(text.substring(0,text.length));
+    likesTex.text((likes+data)+"赞");
 }

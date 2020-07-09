@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.servlet.http.HttpServletRequest;
 import java.sql.Date;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 @Controller
@@ -41,20 +42,21 @@ public class CommentController {
     @ResponseBody
     @RequestMapping(value = "/addLikes",method = RequestMethod.PUT)
     public int addLikes(int commentId,HttpServletRequest request){
-        String strId=String.valueOf(commentId);
-        @SuppressWarnings("unchecked")
-        ArrayList<String> list=(ArrayList<String>)request.getSession().getAttribute("commentLikesList");
-        if(list==null){
-            list=new ArrayList<>();
-        }
-        if(list.contains(strId)){
-            return 0;
-        }else {
-            list.add(strId);
+        Integer commentLikesId=(Integer)request.getSession().getAttribute("commentLikesId"+commentId);
+        if(commentLikesId==null){
+            request.getSession().setAttribute("commentLikesId"+commentId,1);
             commentService.addLikes(commentId);
-            request.getSession().setAttribute("commentLikesList",list);
             return 1;
+        }else {
+            if(commentLikesId==1){
+                request.getSession().setAttribute("commentLikesId"+commentId,-1);
+                return -1;
+            }else {
+                request.getSession().setAttribute("commentLikesId"+commentId,1);
+                return 1;
+            }
         }
+
     }
     //增加评论
     @ResponseBody
@@ -75,11 +77,4 @@ public class CommentController {
         return "SUCCESS";
     }
 
-    @ResponseBody
-    @RequestMapping(value = "/test",method = RequestMethod.GET)
-    public Comment test(Comment comment){
-        //comment=new Comment(2,10,"music","shdfkasjdhg",new Date(new java.util.Date().getTime()));
-        //commentService.setComment(comment);
-        return comment;
-    }
 }
