@@ -17,7 +17,7 @@
             </div>
             <div id="isLoginBox" class="loginBox">
                 <div id="logout-btn" class="login_regist" onclick="logout()">退出</div>
-                <div id="userName" ></div>
+                <div id="userName" th:text="${userMsg.getName()}"></div>
             </div>
         </div>
     </div>
@@ -73,7 +73,8 @@
             <i class="fa fa-backward playBtn"></i>
             <i class="fa fa-play playBtn audioPlay"></i>
             <i class="fa fa-forward playBtn"></i>
-            <i class="fa fa-heart love"></i>
+            <i class="fa fa-star-o star"></i>
+            <i class="fa fa-heart-o love"></i>
             <div class="voiceBox unSelect">
                 <i class="fa fa-volume-up voice"></i>
                 <div class="soud">
@@ -100,46 +101,72 @@
     <div id="commentBox">
         <div id="myCommentBox">
             <div id="title">评论<span>共<span class="commentNum">123</span>条评论</span></div>
-            <textarea id="myCommentText" ></textarea>
-            <img th:src="${music.getCover()}" id="myCommentCover">
-            <span id="commentLength">0/100</span>
+            <textarea id="myCommentText" placeholder="评论" class="myComText"></textarea>
+            <img th:src="${userMsg?.getCover()}" id="myCommentCover">
+            <span id="commentLength"><span class="comLength">0</span>/140</span>
             <div id="commentBtn">评论</div>
         </div>
         <div class="commentTitle">热门评论</div>
         <div id="hotCommentList" class="commentList">
-            <div class="commentItem" >
+            <div class="commentItem" th:each="comment : ${commentHotList}">
                 <div class="itemLeft">
-                    <img src="img/img.jpg" alt="">
+                    <a href="#"><img th:src="${comment.getUsercover()}" ></a>
                 </div>
                 <div class="itemRight">
                     <div class="itemRightTop">
                         <div class="commentText">
-                            <a href="#">sasa:</a>
-                            阿斯蒂芬卡拉和；爱丽丝打开噶多连杆后欸给了傻瓜阿里斯顿好噶；
-                            阿斯兰的好i俄国沙花都开了阿喀琉斯大奶俄国八十数量可观吧阿瑟
-                            部分埃勒克哦i阿婆厚爱问题去哦欸图 好人韩国
+                            <a href="#" th:text="${comment.getUsername()+': '}"></a>
+                            <span th:text="${comment.getText()}"></span>
                         </div>
                     </div>
                     <div class="itemRightBottom">
-                        <span class="commentTime">2020-02-10</span>
+                        <span class="commentTime" th:text="${comment.getCreatetime()}"></span>
                         <div class="commentGrate">
-                            <div class="grate" id=">点赞</div>
-                            <span id=">10赞</span>
+                            <div class="grate" th:attr="id='commentLikeBtn'+${comment.getCommentid()}">点赞</div>
+                            <span th:text="${comment.getLikes()}+'赞'" th:attr="id='commentLikeNum'+${comment.getCommentid()}"></span>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+
+        <div class="commentTitle" >最新评论</div>
+        <div id="newCommentList" class="commentList">
+            <div class="commentItem" th:each="comment : ${commentNewList}">
+                <div class="itemLeft">
+                    <img th:src="${comment.getUsercover()}" alt="">
+                </div>
+                <div class="itemRight">
+                    <div class="itemRightTop">
+                        <div class="commentText">
+                            <a href="#" th:text="${comment.getUsername()+': '}"></a>
+                            <span th:text="${comment.getText()}"></span>
+                        </div>
+                    </div>
+                    <div class="itemRightBottom">
+                        <span class="commentTime" th:text="${comment.getCreatetime()}"></span>
+                        <div class="commentGrate">
+                            <div class="grate" th:attr="id='commentLikeBtn'+${comment.getCommentid()}">点赞</div>
+                            <span th:text="${comment.getLikes()}+'赞'" th:attr="id='commentLikeNum'+${comment.getCommentid()}"></span>
+                        </div>
+                    </div>
+                </div>
             </div>
 
+
+
+
         </div>
 
-        <div class="commentTitle">最新评论</div>
-        <div id="newCommentList" class="commentList">
-        </div>
-        </div>
+    </div>
 
 </body>
 <script src="/js/jquery-3.4.1.js"></script>
-<script src="/js/musicAudio.js"></script>
+<script th:inline="javascript">
+    let userMsg=[[${userMsg}]];
+    let music=[[${music}]];
+</script>
 <script src="/js/index2.js"></script>
+<script src="/js/comment.js"></script>
+<script src="/js/musicAudio.js"></script>
 </html>

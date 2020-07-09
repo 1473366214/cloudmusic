@@ -1,6 +1,7 @@
 package com.music.cloundmusic.service.Impl;
 
 import com.music.cloundmusic.dao.CommentMapper;
+import com.music.cloundmusic.dto.UserComment;
 import com.music.cloundmusic.entity.Comment;
 import com.music.cloundmusic.service.CommentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +19,7 @@ public class CommentServiceImpl implements CommentService {
     }
 
     @Override
-    public List<Comment> getComment(int keyid, String type,String types) {
+    public List<UserComment> getComment(int keyid, String type, String types) {
         return commentMapper.getComment(String.valueOf(keyid),type,types);
     }
 

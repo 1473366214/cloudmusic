@@ -206,3 +206,18 @@ function clickPlay() {
 $("#focusComment").click(function() {
     $("#myCommentText")[0].focus();
 });
+
+// 添加评论
+$("#commentBtn").click(function () {
+    if(isLoginWin(userMsg.userid)){
+        addComment(userMsg.userid,music.musicid,"music");
+
+    }
+});
+
+// 登录框
+if(userMsg.userid!==null){
+    $("#isLoginBox").show();
+}else{
+    $("#noLoginBox").show();
+}

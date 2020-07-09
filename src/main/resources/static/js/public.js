@@ -77,3 +77,4 @@ function uploadFile(type) {
         }
     });
 }
+

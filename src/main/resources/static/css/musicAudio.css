@@ -119,6 +119,9 @@
 	font-size: 26px !important;
 	margin-right: 20px;
 }
+.star{
+	font-size: 22px !important;
+}
 .love{
 	font-size: 22px !important;
 	margin-left: 40px;
@@ -275,7 +278,7 @@
 #commentBtn{
 	width: 45px;
 	height: 20px;
-	background-color: rgb(79, 79, 252);
+	background-image: linear-gradient(to top, #945cc9, #8b8ce9);
 	position: absolute;
 	top: 145px;
 	right: 5%;
@@ -287,7 +290,7 @@
 	cursor: pointer;
 }
 #commentBtn:hover{
-	background-color: rgb(121, 121, 252);
+	background-image: linear-gradient(to top, #a575d1, #9fa0ee);
 }
 
 .commentTitle{
@@ -337,7 +340,7 @@
 	height: auto;
 }
 .commentItem .itemRightTop div a{
-	color: blue;
+	color: rgb(127, 127, 216);
 	text-decoration: none;
 }
 .commentItem .itemRightTop div a:hover{
@@ -364,7 +367,7 @@
 }
 .commentItem .itemRightBottom .commentGrate div{
 	float: right;
-	background-color: rgb(79, 79, 255);
+	background-image: linear-gradient(to top, #ad5cff, #9798ff);
 	color: #fff;
 	width: 40px;
 	height: 17px;
@@ -375,5 +378,5 @@
 	cursor: pointer;
 }
 .commentItem .itemRightBottom .commentGrate div:hover{
-	background-color: rgb(101, 101, 255);
+	background-image: linear-gradient(to top, #bc79ff, #acadff);
 }

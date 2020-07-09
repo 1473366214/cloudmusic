@@ -2,23 +2,15 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.music.cloundmusic.dao.CommentMapper">
 
-    <resultMap id="commentMap" type="Comment">
-        <id column="commentid" property="commentid"/>
-        <result column="text" property="text" />
-        <result column="likes" property="likes"/>
-        <result column="createtime" property="createtime"/>
-        <association property="user" javaType="User">
-            <id column="userid" property="userid"/>
-            <result column="name" property="name"/>
-            <result column="cover" property="cover"/>
-        </association>
-    </resultMap>
 
-    <select id="getComment" parameterType="string" resultMap="commentMap">
-        select comment.commentid,comment.text,comment.likes,comment.createtime,user.userid,user.name,user.cover
+    <select id="getComment" parameterType="string" resultType="com.music.cloundmusic.dto.UserComment">
+        select comment.commentid,comment.text,comment.likes,comment.createtime,comment.userid ,user.name as username,user.cover as usercover
         from comment join user on comment.userid=user.userid and comment.keyid=#{keyid} and comment.type=#{type} order by ${types} DESC limit 7
     </select>
 
+    <select id="getCountComment" resultType="int">
+
+    </select>
     <insert id="setComment" parameterType="Comment" keyProperty="commentid" useGeneratedKeys="true">
         insert into comment(userid, keyid, type, text, createtime) values (#{userid},#{keyid},#{type},#{text},#{createtime});
     </insert>

@@ -4,11 +4,45 @@
 <head>
     <meta charset="UTF-8">
     <title>音乐网站</title>
-    <link rel="stylesheet" type="text/css" href="/css/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/index_home.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    <link rel="stylesheet" type="text/css" href="/css/otherHome.css">
+    <link rel="stylesheet" type="text/css" href="/css/css/font-awesome.css">
 </head>
 <body>
-
+<!-- 标题栏1 -->
+<div id="head">
+    <div id="head-left">收藏我们</div>
+    <div id="head-right">
+        <div id="noLoginBox" class="loginBox">
+            <div id="login-btn" class="login_regist" onclick="loginBtn()">登录</div>
+            <div id="regist-btn" class="login_regist" onclick="loginBtn()">注册</div>
+        </div>
+        <div id="isLoginBox" class="loginBox">
+            <div id="logout-btn" class="login_regist" onclick="logout()">退出</div>
+            <div id="userName" ></div>
+        </div>
+    </div>
+</div>
+<!-- 标题栏二 -->
+<div id="head2">
+    <div id="head2-contain">
+        <div id="head2-contain-left">音乐共享网站</div>
+        <div id="head2-contain-right">
+            <input type="text" id="head2-contain-right-text" placeholder="醉清风">
+            <div id="head2-btn">搜索</div>
+        </div>
+    </div>
+</div>
+<!-- 导航栏 -->
+<div id="guider1">
+    <div class="guider2">
+        <div class="guide" id="indexGd" onclick="indexGdClick()">首页</div>
+        <div class="guide" id="musicGd" onclick="musicGdClick()">在线音乐</div>
+        <div class="guide" id="singerGd" onclick="singerGdClick()">歌手</div>
+        <div class="guide" id="issueGd" onclick="issueGdClick()">音乐专辑</div>
+        <div class="guide gdSelect" id="homeGd" onclick="homeGdClick()">在线空间</div>
+    </div>
+</div>
 <!-- 中间页面 -->
 <div class="Box">
     <!-- 左侧信息 -->
@@ -23,53 +57,53 @@
         <ul class="AList" id="CAList">
             <li class="album">
                 <img src="/img/xianzi.png" alt="">
-                <span class="albumName">我喜欢的音乐</span>
-                <span class="musicNum">8首</span>
+                <p>我喜欢的音乐</p>
+                <p>8首</p>
             </li>
             <li class="album">
                 <img src="/img/xianzi.png" alt="">
-                <span class="albumName">我喜欢的音乐</span>
-                <span class="musicNum">8首</span>
+                <p>我喜欢的音乐</p>
+                <p>8首</p>
             </li>
             <li class="album">
                 <img src="/img/xianzi.png" alt="">
-                <span class="albumName">我喜欢的音乐</span>
-                <span class="musicNum">8首</span>
+                <p>我喜欢的音乐</p>
+                <p>8首</p>
             </li>
             <li class="album">
                 <img src="/img/xianzi.png" alt="">
-                <span class="albumName">我喜欢的音乐</span>
-                <span class="musicNum">8首</span>
+                <p>我喜欢的音乐</p>
+                <p>8首</p>
             </li>
             <li class="album">
                 <img src="/img/xianzi.png" alt="">
-                <span class="albumName">我喜欢的音乐</span>
-                <span class="musicNum">8首</span>
+                <p>我喜欢的音乐</p>
+                <p>8首</p>
             </li>
             <li class="album">
                 <img src="/img/xianzi.png" alt="">
-                <span class="albumName">我喜欢的音乐</span>
-                <span class="musicNum">8首</span>
+                <p>我喜欢的音乐</p>
+                <p>8首</p>
             </li>
             <li class="album">
                 <img src="/img/xianzi.png" alt="">
-                <span class="albumName">我喜欢的音乐</span>
-                <span class="musicNum">8首</span>
+                <p>我喜欢的音乐</p>
+                <p>8首</p>
             </li>
             <li class="album">
                 <img src="/img/xianzi.png" alt="">
-                <span class="albumName">我喜欢的音乐</span>
-                <span class="musicNum">8首</span>
+                <p>我喜欢的音乐</p>
+                <p>8首</p>
             </li>
             <li class="album">
                 <img src="/img/xianzi.png" alt="">
-                <span class="albumName">我喜欢的音乐</span>
-                <span class="musicNum">8首</span>
+                <p>我喜欢的音乐</p>
+                <p>8首</p>
             </li>
             <li class="album">
                 <img src="/img/xianzi.png" alt="">
-                <span class="albumName">我喜欢的音乐</span>
-                <span class="musicNum">8首</span>
+                <p>我喜欢的音乐</p>
+                <p>8首</p>
             </li>
         </ul>
 
@@ -83,8 +117,8 @@
         <ul class="AList" id="CltAList">
             <li class="album">
                 <img src="/img/xianzi.png" alt="">
-                <span class="albumName">收藏的音乐</span>
-                <span class="musicNum">8首</span>
+                <p>收藏的音乐</p>
+                <p>8首</p>
             </li>
         </ul>
     </div>
@@ -93,13 +127,13 @@
         <!-- 歌单信息框 -->
         <div id="listMsg">
             <div id="imgBox">
-                <img src="/img/xianzi.png" alt="error">
+                <img src="/img/xianzi.png" alt="">
                 <span id="mask"></span>
             </div>
             <div class="cnt">
                 <div class="itemName">我喜欢的音乐</div>
                 <div class="itemMsg">
-                    <a href="#"><img src="/img/xianzi.png" alt="error"></a>
+                    <a href="#"><img src="/img/xianzi.png" alt=""></a>
                     <a href="#"><span>海新枫</span></a>
                     <span>2020-02-02 创建</span>
                 </div>
@@ -236,7 +270,7 @@
                         <div class="itemRightBottom">
                             <span class="commentTime">2020-02-10</span>
                             <div class="commentGrate">
-                                <div class="grate" id="">点赞</div>
+                                <div class="grate" >点赞</div>
                                 <span >10赞</span>
                             </div>
                         </div>
@@ -260,7 +294,7 @@
                             <span class="commentTime">2020-02-10</span>
                             <div class="commentGrate">
                                 <div class="grate" >点赞</div>
-                                <span>10赞</span>
+                                <span >10赞</span>
                             </div>
                         </div>
                     </div>
@@ -299,5 +333,6 @@
 </div>
 </body>
 <script src="/js/jquery-3.4.1.js"></script>
+<script src="/js/index2.js"></script>
 <script src="/js/index_home.js"></script>
 </html>

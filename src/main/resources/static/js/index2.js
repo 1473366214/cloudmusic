@@ -13,7 +13,7 @@ function issueGdClick(){
     window.location.href="/index/album";
 }
 function homeGdClick(){
-    window.location.href="/index/home";
+    window.location.href="/index/otherHome";
 }
 function gdClick(div){
     $(".guide").removeClass("gdSelect");
@@ -83,3 +83,16 @@ $("#head2-btn").click(function () {
         text=input.attr("placeholder");
     window.location.href="/music/searchMusic?key="+text;
 });
+
+//为登录就显示弹窗
+function isLoginWin(args) {
+    if(args===null){
+        let is=window.confirm("您还没有登录，是否登录?");
+        if(is){
+            window.location.href="/index/login";
+        }
+        return false;
+    }else {
+        return true;
+    }
+}

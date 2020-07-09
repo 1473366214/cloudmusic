@@ -1,5 +1,6 @@
 package com.music.cloundmusic.controller;
 
+import com.music.cloundmusic.dto.UserComment;
 import com.music.cloundmusic.entity.Comment;
 import com.music.cloundmusic.entity.User;
 import com.music.cloundmusic.service.CommentService;
@@ -27,11 +28,11 @@ public class CommentController {
 //获取热门评论
     @ResponseBody
     @RequestMapping(value = "/getComment",method = RequestMethod.GET)
-    public List<Comment> getComment(int keyId,String type,String types){
-        List<Comment> list=commentService.getComment(keyId,type,types);
+    public List<UserComment> getComment(int keyId,String type,String types){
+        List<UserComment> list=commentService.getComment(keyId,"music","likes");
         if(list.size()>0){
-            for(Comment c:list){
-                c.getUser().setCover(relativePath+c.getUser().getCover());
+            for(UserComment c:list){
+                c.setUsercover(relativePath+c.getUsercover());
             }
         }
         return list;
@@ -57,15 +58,28 @@ public class CommentController {
     }
     //增加评论
     @ResponseBody
-    @RequestMapping(value = "/setComment",method = RequestMethod.POST)
-    public Comment setComment(int keyId,String type,String commentText,HttpServletRequest request){
-        User user = (User)request.getSession().getAttribute("userMsg");
-        if(user==null)
-            return null;
-        Comment comment=new Comment(user.getUserid(),keyId,type,commentText,new Date(new java.util.Date().getTime()));
+    @RequestMapping(value = "/setComment",method = RequestMethod.GET)
+    public Comment setComment(Comment comment){
+        comment.setCreatetime(new Date(new java.util.Date().getTime()));
+        comment.setText(comment.getText().replaceAll("\n","<br>"));
         commentService.setComment(comment);
-        comment.setUser(user);
-        comment.setLikes(0);
+        return comment;
+    }
+
+    //添加评论修改
+    @ResponseBody
+    @RequestMapping(value = "/addComment",method = RequestMethod.POST)
+    public String addComment(int userId,int keyId,String type,String commentText,HttpServletRequest request){
+        Comment comment=new Comment(userId,keyId,type,commentText,new Date(new java.util.Date().getTime()));
+        commentService.setComment(comment);
+        return "SUCCESS";
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/test",method = RequestMethod.GET)
+    public Comment test(Comment comment){
+        //comment=new Comment(2,10,"music","shdfkasjdhg",new Date(new java.util.Date().getTime()));
+        //commentService.setComment(comment);
         return comment;
     }
 }

@@ -10,7 +10,6 @@ public class Comment {
     private String text;
     private Integer likes;
     private Date createtime;
-    private User user;
 
     public Comment(){};
 
@@ -76,13 +75,5 @@ public class Comment {
 
     public void setCreatetime(Date createtime) {
         this.createtime = createtime;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
     }
 }

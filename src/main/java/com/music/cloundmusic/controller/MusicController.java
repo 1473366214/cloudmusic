@@ -2,7 +2,10 @@ package com.music.cloundmusic.controller;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.music.cloundmusic.dto.UserComment;
+import com.music.cloundmusic.entity.Comment;
 import com.music.cloundmusic.entity.Music;
+import com.music.cloundmusic.service.CommentService;
 import com.music.cloundmusic.util.ApplicationHelper;
 import com.music.cloundmusic.util.PageInfoHelper;
 import com.music.cloundmusic.entity.User;
@@ -20,7 +23,7 @@ import java.util.List;
 @RequestMapping("/music")
 public class MusicController {
     private ApplicationHelper applicationHelper;
-
+    private CommentService commentService;
     private MusicService musicService;
     @Autowired
     public void setMusicService(MusicService musicService) {
@@ -30,9 +33,10 @@ public class MusicController {
     public void setApplicationHelper(ApplicationHelper applicationHelper) {
         this.applicationHelper = applicationHelper;
     }
-
-
-
+    @Autowired
+    public void setCommentService(CommentService commentService) {
+        this.commentService = commentService;
+    }
 
     //获得所有音乐
     @ResponseBody
@@ -86,9 +90,33 @@ public class MusicController {
             model.addAttribute("music",music);
         }
         User user=(User)request.getSession().getAttribute("userMsg");
-        if(user!=null){
-            model.addAttribute("userMsg",user);
+        if(user==null) {
+            user=new User();
+            user.setCover(applicationHelper.getDefaultUserCover());
         }
+        model.addAttribute("userMsg",user);
+
+        List<UserComment> list=commentService.getComment(musicId,"music","likes");
+        if(list.size()>0){
+            for(int i=0,length=list.size();i<length;i++){
+                UserComment userComment=list.get(i);
+                if(userComment.getLikes()==0){
+                    list.remove(userComment);
+                    i--;
+                    length--;
+                    continue;
+                }
+                userComment.setUsercover(applicationHelper.getRelativePath()+userComment.getUsercover());
+            }
+        }
+        model.addAttribute("commentHotList",list);
+        list=commentService.getComment(musicId,"music","createtime");
+        if(list.size()>0){
+            for(UserComment c:list){
+                c.setUsercover(applicationHelper.getRelativePath()+c.getUsercover());
+            }
+        }
+        model.addAttribute("commentNewList",list);
         return "musicAudio";
     }
     //歌手的歌
@@ -114,7 +142,7 @@ public class MusicController {
     //
     @ResponseBody
     @RequestMapping(value = "/searchMusicPage",method = RequestMethod.GET)
-    public PageInfoHelper<Music> searchMusicPage(int pageNum,int pageSize,String key,Model model){
+    public PageInfoHelper<Music> searchMusicPage(int pageNum,int pageSize,String key){
         PageInfoHelper<Music> pageInfoHelper =musicService.searchMusic(pageNum,pageSize,key);
         for(Music m:pageInfoHelper.getList()){
             m.setCover(applicationHelper.getRelativePath()+m.getCover());

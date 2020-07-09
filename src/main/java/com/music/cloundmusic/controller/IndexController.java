@@ -64,4 +64,11 @@ public class IndexController {
         model.addAttribute("locationList",locationList);
         return "index_music";
     }
+
+
+//    test
+    @RequestMapping("/index/otherHome")
+    public String otherHome(){
+        return "otherHome";
+    }
 }
