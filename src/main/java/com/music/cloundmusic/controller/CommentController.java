@@ -38,10 +38,17 @@ public class CommentController {
         }
         return list;
     }
-//点赞
+    /**
+     * @author: QiuYin
+     * @description: 增加评论的点赞数
+     * @date: 2020/7/11 14:41
+     * @param commentId 评论的id
+     * @return int
+     */
     @ResponseBody
     @RequestMapping(value = "/addLikes",method = RequestMethod.PUT)
     public int addLikes(int commentId,HttpServletRequest request){
+
         Integer commentLikesId=(Integer)request.getSession().getAttribute("commentLikesId"+commentId);
         if(commentLikesId==null){
             request.getSession().setAttribute("commentLikesId"+commentId,1);
@@ -71,7 +78,7 @@ public class CommentController {
     //添加评论修改
     @ResponseBody
     @RequestMapping(value = "/addComment",method = RequestMethod.POST)
-    public String addComment(int userId,int keyId,String type,String commentText,HttpServletRequest request){
+    public String addComment(int userId, int keyId, String type, String commentText){
         Comment comment=new Comment(userId,keyId,type,commentText,new Date(new java.util.Date().getTime()));
         commentService.setComment(comment);
         return "SUCCESS";
