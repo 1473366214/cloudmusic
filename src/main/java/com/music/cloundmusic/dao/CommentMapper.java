@@ -14,4 +14,5 @@ public interface CommentMapper {
     public List<UserComment> getComment(@Param("keyid")String keyid, @Param("type") String type, @Param("types")String types);
     public int setComment(Comment comment);
     public int addLikes(int commentId);
+    public int getCommentCount(@Param("keyid")String keyId,@Param("type")String type);
 }

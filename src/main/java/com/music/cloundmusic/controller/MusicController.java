@@ -95,7 +95,7 @@ public class MusicController {
             user.setCover(applicationHelper.getDefaultUserCover());
         }
         model.addAttribute("userMsg",user);
-
+        //热门评论
         List<UserComment> list=commentService.getComment(musicId,"music","likes");
         if(list.size()>0){
             for(int i=0,length=list.size();i<length;i++){
@@ -110,6 +110,7 @@ public class MusicController {
             }
         }
         model.addAttribute("commentHotList",list);
+        //最新评论
         list=commentService.getComment(musicId,"music","createtime");
         if(list.size()>0){
             for(UserComment c:list){
@@ -117,6 +118,7 @@ public class MusicController {
             }
         }
         model.addAttribute("commentNewList",list);
+        model.addAttribute("commentCount",commentService.getCommentCount(musicId,"music"));
         return "musicAudio";
     }
     //歌手的歌

@@ -9,4 +9,5 @@ public interface CommentService {
     public List<UserComment> getComment(int keyid, String type, String types);
     public int setComment(Comment comment);
     public int addLikes(int commentId);
+    public int getCommentCount(int keyId,String type);
 }

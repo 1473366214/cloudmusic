@@ -101,7 +101,7 @@
     <!-- 评论 -->
     <div id="commentBox">
         <div id="myCommentBox">
-            <div id="title">评论<span>共<span class="commentNum">123</span>条评论</span></div>
+            <div id="title">评论<span>共<span class="commentNum" th:text="${commentCount}"></span>条评论</span></div>
             <textarea id="myCommentText" placeholder="评论" class="myComText"></textarea>
             <img th:src="${userMsg?.getCover()}" id="myCommentCover">
             <span id="commentLength"><span class="comLength">0</span>/140</span>

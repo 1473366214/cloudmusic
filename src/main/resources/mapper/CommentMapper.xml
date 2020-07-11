@@ -8,8 +8,8 @@
         from comment join user on comment.userid=user.userid and comment.keyid=#{keyid} and comment.type=#{type} order by ${types} DESC limit 7
     </select>
 
-    <select id="getCountComment" resultType="int">
-
+    <select id="getCommentCount" parameterType="string" resultType="int">
+        select count(commentid) from comment where keyid=#{keyid} and type=#{type}
     </select>
     <insert id="setComment" parameterType="Comment" keyProperty="commentid" useGeneratedKeys="true">
         insert into comment(userid, keyid, type, text, createtime) values (#{userid},#{keyid},#{type},#{text},#{createtime});

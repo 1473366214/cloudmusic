@@ -32,4 +32,9 @@ public class CommentServiceImpl implements CommentService {
     public int addLikes(int commentId) {
         return commentMapper.addLikes(commentId);
     }
+
+    @Override
+    public int getCommentCount(int keyId, String type) {
+        return commentMapper.getCommentCount(String.valueOf(keyId),type);
+    }
 }
