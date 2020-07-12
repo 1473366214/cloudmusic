@@ -1,20 +1,15 @@
 //播放按钮hover
-let listUl=$("#listUl");
-listUl.on("mouseenter",".icons",function () {
-    let id="#"+this.id;
-    $(id).removeClass("fa-play-circle-o");
-    $(id).addClass("fa-play-circle");
+$(".icons").hover(function () {
+    let id=this.id;
+    let icon = $("#"+id);
+    icon.removeClass("fa-play-circle-o");
+    icon.addClass("fa-play-circle");
+},function () {
+    let id=this.id;
+    let icon = $("#"+id);
+    icon.removeClass("fa-play-circle");
+    icon.addClass("fa-play-circle-o");
 });
-listUl.on("mouseleave",".icons",function () {
-    let id="#"+this.id;
-    $(id).removeClass("fa-play-circle");
-    $(id).addClass("fa-play-circle-o");
-});
-//播放按钮点击
-listUl.on("click",".icons",function () {
-    let id=this.id.substring(5);
-    window.location.href="/music/musicPlay/"+id;
-})
 //歌手的歌曲
 function getMusicBySingerId(id) {
     $.ajax({
@@ -35,7 +30,7 @@ function generalMusicList(data){
     let html="<li>" +
         "          <div class=\"listInfo\">"+data.name+"</div>" +
         "          <div class=\"listInfo\">"+data.albumname+"</div>" +
-        "          <div class=\"listInfo\"><i class=\"fa fa-play-circle-o icons\" style=\"font-size: 26px;\" id=\"music"+data.musicid+"\"></i></div>" +
+        "          <div class=\"listInfo\"><i class=\"fa fa-play-circle-o icons\" id=\"music"+data.musicid+"\"></i></div>" +
         "    </li>";
-    $("#listUl").append(html);
+    $("#listUl").append(html).append(html);
 }

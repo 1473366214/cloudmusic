@@ -1,5 +1,6 @@
 package com.music.cloundmusic.service;
 
+import com.music.cloundmusic.dto.SingerAlbum;
 import com.music.cloundmusic.entity.Music;
 import com.music.cloundmusic.util.PageInfoHelper;
 
@@ -11,7 +12,8 @@ public interface MusicService {
     public List<Music> getMusicInSongList(int songListId);
     public List<Music> getHotMusic();
     public Music getMusicById(int musicId);
-    public List<Music> getMusicBySingerId(int singerId);
+    public List<SingerAlbum> getMusicBySingerId(int singerId);
     public List<Music> getMusicByAlbumId(int albumId);
     public PageInfoHelper<Music> searchMusic(int pageNum, int pageSize, String name);
+    public SingerAlbum getSingerAlbum(Integer singerId, Integer albumId);
 }

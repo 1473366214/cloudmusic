@@ -25,11 +25,12 @@
     </select>
 
     <select id="getMusicById" parameterType="int" resultType="Music">
-        select cover,name,singerid,albumid,path,style from music where musicid=#{musicId}
+        select  musicid,cover,name,singerid,albumid,path,style from music where musicid=#{musicId}
     </select>
 
-    <select id="getMusicBySingerId" parameterType="int" resultType="Music">
-        select music.musicid,music.name,album.name as albumname from music join album on music.singerid=#{singerId} and music.albumid=album.albumid order by album.albumid
+    <select id="getMusicBySingerId" parameterType="int" resultType="com.music.cloundmusic.dto.SingerAlbum">
+        select m.musicid as musicId,m.name as musicName,m.path as musicPath,a.albumid as albumId,a.name as albumName
+               from music m join album a on m.albumid = a.albumid and m.singerid=${singerId}
     </select>
 
     <select id="getMusicByAlbumId" parameterType="int" resultType="Music">

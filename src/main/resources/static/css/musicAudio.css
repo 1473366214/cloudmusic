@@ -7,6 +7,7 @@
 	left: -500px;
 	margin-top: 20px;
 }
+
 /* 介绍信息 */
 
 /* 图片 */
@@ -339,13 +340,7 @@
 .commentItem .itemRightTop div{
 	height: auto;
 }
-.commentItem .itemRightTop div a{
-	color: rgb(127, 127, 216);
-	text-decoration: none;
-}
-.commentItem .itemRightTop div a:hover{
-	text-decoration: underline;
-}
+
 .itemRightBottom{
 	height: 16px;
 	margin-top: 2px;

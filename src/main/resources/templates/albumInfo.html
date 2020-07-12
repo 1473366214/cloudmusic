@@ -47,14 +47,14 @@
     <div id="musicListBox">
         <div id="musicListTitle">歌曲列表</div>
         <div id="musicList">
-            <ul>
+            <ul id="listUl">
                 <li>
-                    <div class="listTitle">歌曲</div>
-                    <div class="listTitle">操作</div>
+                    <div class="listInfo listInfo1">歌曲</div>
+                    <div class="listInfo listInfo2">操作</div>
                 </li>
                 <li th:each="music:${musicList}">
-                    <div class="listInfo" th:text="${music.getName()}"></div>
-                    <div class="listInfo"><i class="fa fa-play-circle-o icons" style="font-size: 26px;" th:attr="id='music'+${music.getMusicid()}"></i></div>
+                    <div class="listInfo listInfo1" th:text="${music.getName()}"></div>
+                    <div class="listInfo listInfo2"><i class="fa fa-play-circle-o icons" th:attr="id='music'+${music.getMusicid()}"></i></div>
                 </li>
 
             </ul>

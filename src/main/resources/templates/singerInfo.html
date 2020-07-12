@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>音乐网站</title>
+    <link rel="stylesheet" type="text/css" href="/css/public.css">
     <link rel="stylesheet" type="text/css" href="/css/index.css">
     <link rel="stylesheet" type="text/css" href="/css/foot.css">
     <link rel="stylesheet" type="text/css" href="/css/singerInfo.css">
@@ -48,9 +49,20 @@
         <div id="musicList">
             <ul id="listUl">
                 <li>
-                    <div class="listTitle">歌曲</div>
-                    <div class="listTitle">专辑</div>
-                    <div class="listTitle">播放</div>
+                    <div class="listInfo listInfo1">歌曲</div>
+                    <div class="listInfo listInfo2">专辑</div>
+                    <div class="listInfo listInfo3">播放</div>
+                </li>
+                <li th:each="music : ${musicList}">
+                      <div class="listInfo listInfo1" th:text="${music.getMusicName()}"></div>
+                      <div class="listInfo listInfo2">
+                          <a class="a-text" th:href="'/album/albumInfo?albumId='+${music.getAlbumId()}" th:text="${music.getAlbumName()}"></a>
+                      </div>
+                      <div class="listInfo listInfo3">
+                          <a th:href="'/music/musicPlay/'+${music.getMusicId()}">
+                              <i class="icons fa-play-circle-o fa" th:attr="id='music'+${music.getMusicId()}"></i>
+                          </a>
+                      </div>
                 </li>
             </ul>
         </div>
@@ -66,8 +78,8 @@
 <script src="/js/singerInfo.js"></script>
 
 <script th:inline="javascript">
-    let singerInfo=[[${singerInfo}]]
-    getMusicBySingerId(singerInfo.singerid);
+    let singerInfo=[[${singerInfo}]];
+    //getMusicBySingerId(singerInfo.singerid);
 </script>
 
 </html>

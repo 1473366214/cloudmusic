@@ -2,6 +2,9 @@ package com.music.cloundmusic.controller;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.music.cloundmusic.dto.SingerAlbum;
+import com.music.cloundmusic.entity.Music;
+import com.music.cloundmusic.service.MusicService;
 import com.music.cloundmusic.util.PageInfoSinger;
 import com.music.cloundmusic.entity.Singer;
 import com.music.cloundmusic.service.SingerService;
@@ -18,17 +21,29 @@ public class SingerController {
     @Value("${relativePath}")
     private String relativePath;
     private SingerService singerService;
+    private MusicService musicService;
 
     @Autowired
     public void setSingerService(SingerService singerService) {
         this.singerService = singerService;
     }
-//歌手详细信息
+    @Autowired
+    public void setMusicService(MusicService musicService) {
+        this.musicService = musicService;
+    }
+
+    //歌手详细信息
     @RequestMapping(value = "/singer/{singerId}")
     public String getSingerInfo(@PathVariable("singerId")int singerId, Model model){
+        //歌手信息
         Singer singer=singerService.getSingerInfo(singerId);
         singer.setCover(relativePath+singer.getCover());
         model.addAttribute("singerInfo",singer);
+        List<SingerAlbum> list=musicService.getMusicBySingerId(singerId);
+        for(SingerAlbum singerAlbum : list){
+            singerAlbum.setMusicPath(relativePath+singerAlbum.getMusicPath());
+        }
+        model.addAttribute("musicList",list);
         return "singerInfo";
     }
     //歌手列表

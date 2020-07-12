@@ -1,0 +1,8 @@
+/*a 链接*/
+.a-text{
+    color: rgb(127, 127, 216);
+    text-decoration: none;
+}
+.a-text:hover{
+    text-decoration: underline;
+}

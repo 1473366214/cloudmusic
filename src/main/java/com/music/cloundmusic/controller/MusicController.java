@@ -2,9 +2,11 @@ package com.music.cloundmusic.controller;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.music.cloundmusic.dto.SingerAlbum;
 import com.music.cloundmusic.dto.UserComment;
 import com.music.cloundmusic.entity.Comment;
 import com.music.cloundmusic.entity.Music;
+import com.music.cloundmusic.entity.Singer;
 import com.music.cloundmusic.service.CommentService;
 import com.music.cloundmusic.util.ApplicationHelper;
 import com.music.cloundmusic.util.PageInfoHelper;
@@ -118,13 +120,19 @@ public class MusicController {
             }
         }
         model.addAttribute("commentNewList",list);
+        //评论数
         model.addAttribute("commentCount",commentService.getCommentCount(musicId,"music"));
+        SingerAlbum singerAlbum=null;
+        assert music != null;
+        if(music.getSingerid()!=null&&music.getAlbumid()!=null)
+            singerAlbum=musicService.getSingerAlbum(music.getSingerid(),music.getAlbumid());
+        model.addAttribute("singerAlbumInfo",singerAlbum);
         return "musicAudio";
     }
     //歌手的歌
     @ResponseBody
     @RequestMapping(value = "/getMusicBySingerId",method = RequestMethod.GET)
-    public List<Music> getMusicBySingerId(int singerId){
+    public List<SingerAlbum> getMusicBySingerId(int singerId){
 
         return musicService.getMusicBySingerId(singerId);
     }

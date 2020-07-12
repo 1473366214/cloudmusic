@@ -221,3 +221,6 @@ if(userMsg.userid!==null){
 }else{
     $("#noLoginBox").show();
 }
+
+//播放按钮
+$("#play").click(clickPlay);

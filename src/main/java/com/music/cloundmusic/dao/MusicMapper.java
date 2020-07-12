@@ -1,5 +1,6 @@
 package com.music.cloundmusic.dao;
 
+import com.music.cloundmusic.dto.SingerAlbum;
 import com.music.cloundmusic.entity.Music;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
@@ -15,7 +16,7 @@ public interface MusicMapper {
     public List<Music> getMusicInSongList(int songListId);
     public List<Music> getHotMusic();
     public Music getMusicById(int musicId);
-    public List<Music> getMusicBySingerId(int singerId);
+    public List<SingerAlbum> getMusicBySingerId(int singerId);
     public List<Music> getMusicByAlbumId(int albumId);
     public List<Music> getMusicByMusicName(String name);
     public List<Music> getMusicBySingerName(String name);

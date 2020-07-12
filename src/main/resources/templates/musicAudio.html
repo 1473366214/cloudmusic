@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>音乐网站</title>
+    <link rel="stylesheet" type="text/css" href="/css/public.css">
     <link rel="stylesheet" type="text/css" href="/css/index.css">
     <link rel="stylesheet" href="/css/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/css/musicAudio.css">
@@ -52,10 +53,10 @@
                     <span id="msg-music-name" th:text="${music.getName()}"></span>
                 </div>
                 <div class="spans singer">
-                    <span>歌手：<span th:text="nulls"></span></span>
+                    <span>歌手：<a class="a-text" th:href="'/singer/'+${singerAlbumInfo.getSingerId()}" th:text="${singerAlbumInfo.getSingerName()}"></a></span>
                 </div>
                 <div class="spans album">
-                    <span>专辑：<span th:text="nulls"></span></span>
+                    <span>专辑：<a class="a-text" th:href="'/album/albumInfo?albumId='+${singerAlbumInfo.getAlbumId()}" th:text="${singerAlbumInfo.getAlbumName()}"></a></span>
                 </div>
                 <div class="btnList">
                     <div class="btn" id="play">播放</div>
@@ -116,7 +117,7 @@
                 <div class="itemRight">
                     <div class="itemRightTop">
                         <div class="commentText">
-                            <a href="#" th:text="${comment.getUsername()+': '}"></a>
+                            <a class="a-text" href="#" th:text="${comment.getUsername()+': '}"></a>
                             <span th:text="${comment.getText()}"></span>
                         </div>
                     </div>
@@ -140,7 +141,7 @@
                 <div class="itemRight">
                     <div class="itemRightTop">
                         <div class="commentText">
-                            <a href="#" th:text="${comment.getUsername()+': '}"></a>
+                            <a class="a-text" href="#" th:text="${comment.getUsername()+': '}"></a>
                             <span th:text="${comment.getText()}"></span>
                         </div>
                     </div>
