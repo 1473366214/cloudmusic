@@ -6,6 +6,8 @@
 	margin-left: 50%;
 	left: -500px;
 	margin-top: 20px;
+	border-radius: 10px;
+	overflow: hidden;
 }
 
 /* 介绍信息 */
@@ -117,8 +119,11 @@
 	text-shadow: 1px 1px 1px rgb(197, 173, 173);
 }
 .playBtn{
-	font-size: 26px !important;
+	font-size: 24px !important;
 	margin-right: 20px;
+}
+.audioPlay{
+	font-size: 28px !important;
 }
 .star{
 	font-size: 22px !important;
@@ -161,7 +166,7 @@
 	left: -6px;
 	top: -7px;
 	font-size: 20px !important;
-	color: #fff;
+	color: #e5e5e5;
 }
 .doc:hover{
 	text-shadow: 1px 1px 1px lightgray
@@ -198,7 +203,7 @@
 .soudLength{
 	width: 0;
 	height: 4px;
-	background-color: rgb(120, 120, 253);
+	background-color: rgb(255, 43, 43);
 	cursor: pointer;
 	border-radius: 3px;
 }
@@ -206,7 +211,7 @@
 	position: absolute;
 	left: -6px;
 	top: -6px;
-	color: rgb(181, 181, 238);
+	color: #e5e5e5;
 }
 .doc1:hover{
 	color: rgb(255, 255, 255);
@@ -222,7 +227,9 @@
 	margin-left: 50%;
 	padding: 10px 0 40px 0;
 	left: -500px;
-	top: 15px;
+	top: 10px;
+	margin-bottom: 10px;
+	border-radius: 10px;
 }
 #myCommentBox{
 	position: relative;

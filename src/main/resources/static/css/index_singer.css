@@ -28,7 +28,7 @@
 /* 方框 */
 #index_musicBlock{
     width: 1000px;
-    height: 650px;
+    height: 610px;
     background-color: #fff;
     display: block;
     margin: 0 auto;
@@ -36,6 +36,7 @@
     padding-top: 10px;
     overflow: hidden;
     position: relative;
+    border-radius: 10px;
 }
 #index_musicBlock .index_block_title{
     background-color: #04a219;
@@ -87,7 +88,7 @@
     height: 30px;
     position: absolute;
     right: 60px;
-    bottom: 40px;
+    bottom: 7px;
 }
 .pageBtn{
     background-color: rgb(121, 121, 252);

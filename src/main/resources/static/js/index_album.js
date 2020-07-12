@@ -4,6 +4,7 @@ let pages=1;
 $(document).ready(function () {
     getRecommendAlbum();
     getAllAlbum();
+    $(window.parent.$("#my-iframe")).attr("height","1060px");
 });
 //推荐专辑
 function getRecommendAlbum() {

@@ -9,23 +9,11 @@
     <link rel="stylesheet" type="text/css" href="/css/css/font-awesome.css">
 </head>
 <body>
-    <div id="head">
-        <div id="head-left">收藏我们</div>
-        <div id="head-right">
-            <div id="noLoginBox" class="loginBox">
-                <div id="login-btn" class="login_regist" onclick="loginBtn()">登录</div>
-                <div id="regist-btn" class="login_regist" onclick="loginBtn()">注册</div>
-            </div>
-            <div id="isLoginBox" class="loginBox">
-                <div id="logout-btn" class="login_regist" onclick="logout()">退出</div>
-                <div id="userName" ></div>
-            </div>
-        </div>
-    </div>
     <div id="head2">
         <div id="head2-contain">
             <div id="head2-contain-left">音乐共享网站</div>
             <div id="head2-contain-right">
+                <i class="fa fa-search"></i>
                 <input type="text" id="head2-contain-right-text" placeholder="醉清风">
                 <div id="head2-btn">搜索</div>
             </div>
@@ -57,21 +45,7 @@
 </script>
 <script>
     let toGetUserMessage=true;
-    switch (myPath) {
-        case "/index_index":gdClick("#indexGd");
-            frame.height("1900px");break;
-        case "/index_music":gdClick("#musicGd");
-            frame.height("600px");break;
-        case "/index_singer":gdClick("#singerGd");
-            frame.height("650px");break;
-        case "/index_album":gdClick("#issueGd");
-            frame.height("1100px");break;
-        case "/index_home":gdClick("#homeGd");
-            frame.height("550px");break;
-        case "/login": frame.height("450px");
-            $(".loginBox").hide();
-            toGetUserMessage=false;break;
-    }
+
     if(toGetUserMessage)
         getUserMsg(true);
 </script>

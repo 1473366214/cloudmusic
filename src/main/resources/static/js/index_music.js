@@ -7,6 +7,7 @@ $(document).ready(function () {
     getMusicList(pageNum,pageSize,locations,category);
     $("#ca_all").addClass("musicLiSelected");
     $("#lo_all").addClass("musicLiSelected");
+    $(window.parent.$("#my-iframe")).attr("height","610px");
 });
 //音乐列表
 function getMusicList(n1,n2,n3,n4) {

@@ -11,8 +11,9 @@
 #recommendAlbumBox{
     height: 450px;
 }
+/*  所有专辑*/
 #allAlbumBox{
-    height: 500px;
+    height: 480px;
 }
 .index_block .index_block_title{
     background-color: #04a219;

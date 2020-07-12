@@ -9,13 +9,13 @@ function gdClick(div){
 }
 
 //高度自适应
-let bHeight=($(window).height()-135)+"px";
+let bHeight=($(window).height()-100)+"px";
 let bLeft=$(".BLeft");
 let bRight=$(".BRight");
 bLeft.css("height", bHeight);
 bRight.css("height", bHeight);
 $(window).resize(function(){
-    bHeight=($(window).height()-135)+"px";
+    bHeight=($(window).height()-100)+"px";
     bLeft.css("height", bHeight);
     bRight.css("height", bHeight);
     bRight.css("border-right", "rgb(226, 211, 211) solid 1px");

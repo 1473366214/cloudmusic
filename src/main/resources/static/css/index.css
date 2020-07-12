@@ -8,80 +8,16 @@ body {
     background-color: #f5f5f5;
     overflow-x: hidden;
     overflow-y: auto;
-    padding-top: 120px;
+    padding-top: 90px;
 }
-/*
-顶部
-*/
-#head{
-    background-color: rgb(230, 221, 238);
-    width: 100%;
-    height: 30px;
-    position: fixed;
-    top: 0;
-    z-index: 2;
-}
-#head-left{
-    font-size: 15px;
-    height: 20px;
-    float: left;
-    position: relative;
-    top: 50%;
-    margin-top: -10px;
-    margin-left: 20px;
-}
-#head-left:hover{
-    color: rgb(34, 46, 218);
-    cursor: pointer;
-}
-#head-right{
-    height: 20px;
-    float: right;
-    position: relative;
-    top: 50%;
-    margin-top: -10px;
-    margin-right: 20px;
-}
-.loginBox{
-    display: none;
-}
-#userName{
-    height: 20px;
-    float: right;
-    font-size: 15px;
-    margin-right: 5px;
-    padding: 0 4px 0 4px;
-    border-radius: 4px;
-    text-align: center;
-    border: #04a219 solid 1px;
-    cursor: pointer;
-}
-#userName:hover{
-    color: #fff;
-    background-color: rgb(34, 46, 218);
-}
-.login_regist{
-    width: 40px;
-    height: 20px;
-    float: right;
-    font-size: 15px;
-    margin-right: 5px;
-    border-radius: 4px;
-    text-align: center;
-    border: #04a219 solid 1px;
-}
-.login_regist:hover{
-    color: #fff;
-    cursor: pointer;
-    background-color: #04a219;
-}
+
 /*
 顶部2
 */
 #head2{
     position: fixed;
     z-index: 2;
-    top: 30px;
+    top: 0;
     width: 100%;
     height: 50px;
     display: flex;
@@ -106,6 +42,14 @@ body {
 }
 #head2-contain-right{
     float: right;
+    position: relative;
+}
+.fa-search{
+    position: absolute;
+    top: 11px;
+    left: 8px;
+    font-size: 18px !important;
+    color: #9e9e9e;
 }
 #head2-btn{
     float: right;
@@ -128,12 +72,12 @@ body {
 }
 #head2-contain-right-text{
     float: left;
-    width: 300px;
+    width: 250px;
     height: 25px;
     margin-top: 6px;
-    padding-left: 5px;
+    padding-left: 25px;
     border: #fff solid 2px;
-    border-radius: 5px 0 0 5px;
+    border-radius: 10px 0 0 10px;
     font-size: 16px;
     outline: none;
 }
@@ -144,7 +88,7 @@ body {
 #guider1{
     position: fixed;
     z-index: 2;
-    top: 80px;
+    top: 50px;
     width:100%;
     height: 50px;
     background-color: #fff;
