@@ -5,12 +5,12 @@
     position: relative;
     margin-left: 50%;
     left: -500px;
-    margin-top: 10px;
 }
 
 /* 左侧列表 */
 .BLeft{
     position: fixed;
+    top: 85px;
     width: 240px;
     float: left;
     border-left: rgb(226, 211, 211) solid 1px;

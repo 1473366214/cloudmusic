@@ -3,19 +3,28 @@ $(".guide").click(function () {
     let id='#'+this.id;
     gdClick(id);
 });
+gdClick("#index_home");
 function gdClick(div){
     $(".guide").removeClass("gdSelect");
     $(div).addClass("gdSelect");
 }
+<!--导航栏-->
+$(".g").click(function () {
+    let ids='/index/'+this.id;
+    window.location.href=ids;
+});
+$("#index_home").click(function () {
+    window.location.href="/index/otherHome";
+});
 
 //高度自适应
-let bHeight=($(window).height()-100)+"px";
+let bHeight=($(window).height()-85)+"px";
 let bLeft=$(".BLeft");
 let bRight=$(".BRight");
 bLeft.css("height", bHeight);
 bRight.css("height", bHeight);
 $(window).resize(function(){
-    bHeight=($(window).height()-100)+"px";
+    bHeight=($(window).height()-85)+"px";
     bLeft.css("height", bHeight);
     bRight.css("height", bHeight);
     bRight.css("border-right", "rgb(226, 211, 211) solid 1px");

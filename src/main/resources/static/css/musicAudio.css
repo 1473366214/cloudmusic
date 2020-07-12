@@ -5,7 +5,7 @@
 	position: relative;
 	margin-left: 50%;
 	left: -500px;
-	margin-top: 20px;
+	margin-top: 10px;
 	border-radius: 10px;
 	overflow: hidden;
 }
@@ -169,7 +169,8 @@
 	color: #e5e5e5;
 }
 .doc:hover{
-	text-shadow: 1px 1px 1px lightgray
+	text-shadow: 1px 1px 1px lightgray;
+	color: #fff;
 }
 .unSelect{
 	-moz-user-select: -moz-none;

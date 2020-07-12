@@ -47,3 +47,12 @@ function generalHtml(data) {
         box.append(html);
     }
 }
+
+<!--导航栏-->
+$(".g").click(function () {
+    let ids='/index/'+this.id;
+    window.location.href=ids;
+});
+$("#index_home").click(function () {
+    window.location.href="/index/otherHome";
+});

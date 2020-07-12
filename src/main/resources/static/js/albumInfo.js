@@ -17,3 +17,12 @@ icon.click(function () {
     let id=this.id.substring(5);
     window.location.href="/music/musicPlay/"+id;
 });
+
+<!--导航栏-->
+$(".g").click(function () {
+    let ids='/index/'+this.id;
+    window.location.href=ids;
+});
+$("#index_home").click(function () {
+    window.location.href="/index/otherHome";
+});

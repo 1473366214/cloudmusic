@@ -1,4 +1,3 @@
-
 //高度自适应
 let bHeight=($(window).height()-135)+"px";
 let bLeft=$(".BLeft");
@@ -30,7 +29,3 @@ $(".ALTitle").click(function () {
     }
 });
 
-// 评论框获得焦点
-$("#focusComment").click(function() {
-    $("#myCommentText")[0].focus();
-});

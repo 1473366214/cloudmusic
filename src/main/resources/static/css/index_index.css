@@ -1,7 +1,4 @@
-#index_body{
-    background-color: rgb(230, 221, 238);
-}
-        /* 
+ /*
         公告栏 
         */
 #index_index{
@@ -9,7 +6,6 @@
     background-color: #fff;
     display: block;
     margin: 0 auto;
-    margin-top: 20px;
     border-radius: 10px;
 }
 #index_index #index_cns1{

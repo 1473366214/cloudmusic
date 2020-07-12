@@ -1,19 +1,10 @@
 let frame=$("#my-iframe");
 //导航栏点击事件
-function indexGdClick(){
-    window.location.href="/index/index";
+function guideClick(id) {
+    frame.attr("src",'/'+id);
 }
-function musicGdClick(){
-    window.location.href="/index/music";
-}
-function singerGdClick(){
-    window.location.href="/index/singer";
-}
-function issueGdClick(){
-    window.location.href="/index/album";
-}
-function homeGdClick(){
-    window.location.href="/index/otherHome";
+function parentGuide(id) {
+    window.location.href=id;
 }
 function gdClick(div){
     $(".guide").removeClass("gdSelect");

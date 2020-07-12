@@ -2,7 +2,8 @@ let recommendedMusicId=1;
 $(document).ready(function () {
     getRecommendedMusic();
     index_music_play();
-    $(window.parent.$("#my-iframe")).attr("height","1880px");
+    $(window.parent.$("#my-iframe")).attr("height","1865px");
+    $(window.parent.gdClick("#index_index"));
 });
 //获取推荐音乐
 function getRecommendedMusic(){

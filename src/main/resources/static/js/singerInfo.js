@@ -1,3 +1,11 @@
+<!--导航栏-->
+$(".g").click(function () {
+    let ids='/index/'+this.id;
+    window.location.href=ids;
+});
+$("#index_home").click(function () {
+    window.location.href="/index/otherHome";
+});
 //播放按钮hover
 $(".icons").hover(function () {
     let id=this.id;

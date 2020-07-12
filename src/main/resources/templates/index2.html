@@ -21,11 +21,11 @@
     </div>
     <div id="guider1">
         <div class="guider2">
-            <div class="guide" id="indexGd" onclick="indexGdClick()">首页</div>
-            <div class="guide" id="musicGd" onclick="musicGdClick()">在线音乐</div>
-            <div class="guide" id="singerGd" onclick="singerGdClick()">歌手</div>
-            <div class="guide" id="issueGd" onclick="issueGdClick()">音乐专辑</div>
-            <div class="guide" id="homeGd" onclick="homeGdClick()">在线空间</div>
+            <div class="guide g" id="index_index" >首页</div>
+            <div class="guide g" id="index_music" >在线音乐</div>
+            <div class="guide g" id="index_singer" >歌手</div>
+            <div class="guide g" id="index_album" >音乐专辑</div>
+            <div class="guide" id="index_home" >在线空间</div>
         </div>
     </div>
 
@@ -44,8 +44,15 @@
     let myPath = [[${indexPath}]];
 </script>
 <script>
+    <!--导航栏-->
+    $(".g").click(function () {
+        let id=this.id;
+        guideClick(id);
+    });
+    $("#index_home").click(function () {
+        window.location.href="/index/otherHome";
+    });
     let toGetUserMessage=true;
-
     if(toGetUserMessage)
         getUserMsg(true);
 </script>

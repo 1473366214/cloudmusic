@@ -215,12 +215,14 @@ $("#commentBtn").click(function () {
     }
 });
 
-// 登录框
-if(userMsg.userid!==null){
-    $("#isLoginBox").show();
-}else{
-    $("#noLoginBox").show();
-}
-
 //播放按钮
 $("#play").click(clickPlay);
+
+<!--导航栏-->
+$(".g").click(function () {
+    let ids='/index/'+this.id;
+    window.location.href=ids;
+});
+$("#index_home").click(function () {
+    window.location.href="/index/otherHome";
+});

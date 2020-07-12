@@ -3,7 +3,6 @@
     background-color: #fff;
     display: block;
     margin: 0 auto;
-    margin-top: 20px;
     padding-top: 40px;
     overflow: hidden;
     border-radius: 10px;
@@ -14,6 +13,7 @@
 /*  所有专辑*/
 #allAlbumBox{
     height: 480px;
+    margin-top: 10px;
 }
 .index_block .index_block_title{
     background-color: #04a219;

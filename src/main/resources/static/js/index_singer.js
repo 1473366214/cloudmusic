@@ -5,7 +5,8 @@ let alphabet=null;
 $(document).ready(function () {
     getSingerPage(pageNum,pageSize,alphabet);
     $("#alphabetAll").addClass("alphabetSelect");
-    $(window.parent.$("#my-iframe")).attr("height","650px");
+    $(window.parent.$("#my-iframe")).attr("height","635px");
+    $(window.parent.gdClick("#index_singer"));
 });
 function getSingerPage(n1,n2,n3) {
     let data;
